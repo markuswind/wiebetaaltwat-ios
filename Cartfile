@@ -1,0 +1,5 @@
+github "Alamofire/Alamofire" ~> 3.4
+github "tid-kijyun/Kanna" == 1.0.2
+github "cezheng/PySwiftyRegex" ~> 0.2.0
+github "SwiftyBeaver/SwiftyBeaver"
+github "Ramotion/animated-tab-bar"
