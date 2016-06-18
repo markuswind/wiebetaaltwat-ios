@@ -36,7 +36,9 @@ class Scraper {
                     log.warning("login failed with email: \(self.user.email)")
                 } else {
                     for cookie in cookies {
-                        self.manager.session.configuration.HTTPCookieStorage?.setCookie(cookie)
+                        if cookie.name == "PHPSESSID" {
+                            self.manager.session.configuration.HTTPCookieStorage?.setCookie(cookie)
+                        }
                     }
 
                     completion(true)
