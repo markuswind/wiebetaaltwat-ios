@@ -18,6 +18,14 @@
 		280833CF1D15674D0013358A /* PySwiftyRegex.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 280833C61D15674D0013358A /* PySwiftyRegex.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		280833D01D15674D0013358A /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280833C71D15674D0013358A /* SwiftyBeaver.framework */; };
 		280833D11D15674D0013358A /* SwiftyBeaver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 280833C71D15674D0013358A /* SwiftyBeaver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		280833D41D1569AB0013358A /* LogoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280833D31D1569AB0013358A /* LogoHeaderView.swift */; };
+		280833D61D1569EE0013358A /* LoginBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280833D51D1569EE0013358A /* LoginBoxView.swift */; };
+		280833D81D156A470013358A /* LabeledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280833D71D156A470013358A /* LabeledTextField.swift */; };
+		280833DA1D156E050013358A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280833D91D156E050013358A /* NavigationController.swift */; };
+		280833DD1D15746D0013358A /* wiebetaaltwat-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 280833DC1D15746D0013358A /* wiebetaaltwat-logo.png */; };
+		280833E71D1580120013358A /* account.png in Resources */ = {isa = PBXBuildFile; fileRef = 280833E51D1580120013358A /* account.png */; };
+		280833E81D1580120013358A /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 280833E61D1580120013358A /* lock.png */; };
+		280833EE1D15848F0013358A /* wiebetaaltwat-footer.png in Resources */ = {isa = PBXBuildFile; fileRef = 280833ED1D15848F0013358A /* wiebetaaltwat-footer.png */; };
 		287C04891D15512700F42CF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C04881D15512700F42CF3 /* LoginViewController.swift */; };
 		287C048E1D15512700F42CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 287C048D1D15512700F42CF3 /* Assets.xcassets */; };
 		287C04911D15512700F42CF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287C048F1D15512700F42CF3 /* LaunchScreen.storyboard */; };
@@ -53,6 +61,14 @@
 		280833C51D15674D0013358A /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = Carthage/Build/iOS/Kanna.framework; sourceTree = "<group>"; };
 		280833C61D15674D0013358A /* PySwiftyRegex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PySwiftyRegex.framework; path = Carthage/Build/iOS/PySwiftyRegex.framework; sourceTree = "<group>"; };
 		280833C71D15674D0013358A /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
+		280833D31D1569AB0013358A /* LogoHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoHeaderView.swift; sourceTree = "<group>"; };
+		280833D51D1569EE0013358A /* LoginBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginBoxView.swift; sourceTree = "<group>"; };
+		280833D71D156A470013358A /* LabeledTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabeledTextField.swift; sourceTree = "<group>"; };
+		280833D91D156E050013358A /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		280833DC1D15746D0013358A /* wiebetaaltwat-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wiebetaaltwat-logo.png"; path = "images/wiebetaaltwat-logo.png"; sourceTree = "<group>"; };
+		280833E51D1580120013358A /* account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = account.png; path = images/icons/account.png; sourceTree = "<group>"; };
+		280833E61D1580120013358A /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lock.png; path = images/icons/lock.png; sourceTree = "<group>"; };
+		280833ED1D15848F0013358A /* wiebetaaltwat-footer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wiebetaaltwat-footer.png"; sourceTree = "<group>"; };
 		287C04831D15512700F42CF3 /* wiebetaaltwat-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wiebetaaltwat-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		287C04881D15512700F42CF3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		287C048D1D15512700F42CF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "wiebetaaltwat-ios/Assets.xcassets"; sourceTree = "<group>"; };
@@ -81,6 +97,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		280833DB1D15745F0013358A /* images */ = {
+			isa = PBXGroup;
+			children = (
+				280833E01D157F6C0013358A /* icons */,
+				280833ED1D15848F0013358A /* wiebetaaltwat-footer.png */,
+				280833DC1D15746D0013358A /* wiebetaaltwat-logo.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		280833E01D157F6C0013358A /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				280833E51D1580120013358A /* account.png */,
+				280833E61D1580120013358A /* lock.png */,
+			);
+			name = icons;
+			sourceTree = "<group>";
+		};
 		287C047A1D15512700F42CF3 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +143,7 @@
 			children = (
 				287C04981D15627400F42CF3 /* categories */,
 				287C04991D15627A00F42CF3 /* helpers */,
+				280833DB1D15745F0013358A /* images */,
 				287C049B1D15629700F42CF3 /* models */,
 				287C049A1D15628B00F42CF3 /* scrapers */,
 				287C049D1D1562A400F42CF3 /* supporting files */,
@@ -153,6 +189,7 @@
 		287C049C1D15629C00F42CF3 /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				280833D91D156E050013358A /* NavigationController.swift */,
 				287C04881D15512700F42CF3 /* LoginViewController.swift */,
 			);
 			path = viewcontrollers;
@@ -169,6 +206,9 @@
 		287C049E1D1562B200F42CF3 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				280833D71D156A470013358A /* LabeledTextField.swift */,
+				280833D51D1569EE0013358A /* LoginBoxView.swift */,
+				280833D31D1569AB0013358A /* LogoHeaderView.swift */,
 				287C04A51D15637200F42CF3 /* BoxView.swift */,
 				287C04A61D15637200F42CF3 /* View.swift */,
 			);
@@ -235,8 +275,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				280833DD1D15746D0013358A /* wiebetaaltwat-logo.png in Resources */,
+				280833EE1D15848F0013358A /* wiebetaaltwat-footer.png in Resources */,
+				280833E81D1580120013358A /* lock.png in Resources */,
 				287C04911D15512700F42CF3 /* LaunchScreen.storyboard in Resources */,
 				287C048E1D15512700F42CF3 /* Assets.xcassets in Resources */,
+				280833E71D1580120013358A /* account.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,13 +291,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				280833DA1D156E050013358A /* NavigationController.swift in Sources */,
 				287C04A11D15634A00F42CF3 /* UIColor+HexCode.swift in Sources */,
 				287C04A21D15634A00F42CF3 /* UIImage+GrayScale.swift in Sources */,
 				287C04A71D15637200F42CF3 /* BoxView.swift in Sources */,
 				287C04891D15512700F42CF3 /* LoginViewController.swift in Sources */,
+				280833D41D1569AB0013358A /* LogoHeaderView.swift in Sources */,
 				280833C21D15642A0013358A /* AppDelegate.swift in Sources */,
 				287C04A81D15637200F42CF3 /* View.swift in Sources */,
 				287C04A41D15635B00F42CF3 /* Settings.swift in Sources */,
+				280833D61D1569EE0013358A /* LoginBoxView.swift in Sources */,
+				280833D81D156A470013358A /* LabeledTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

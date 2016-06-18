@@ -32,6 +32,7 @@ class LoginBoxView: View {
         let emailTextFieldFrame = CGRect(x: 0, y: 0, width: frame.width, height: inputFieldHeight)
         emailTextField = LabeledTextInput(icon: "account.png", placeholder: "Email", frame: emailTextFieldFrame)
         emailTextField.textField.keyboardType = .EmailAddress
+        emailTextField.textField.autocorrectionType = .No
         emailTextField.textField.returnKeyType = .Next
 
         let passwordTextFieldFrame = CGRect(x: 0, y: emailTextFieldFrame.maxY - 1, width: frame.width, height: inputFieldHeight)
