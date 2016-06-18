@@ -82,7 +82,16 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
     }
 
     func loginButtonClicked(sender: UIButton!) {
-        // TODO: - login with scraper
+        // TODO: - check if valid email and password values
+        loginBoxView.loginButton?.enabled = false
+
+        let email = loginBoxView.emailTextField.textField.text
+        let password = loginBoxView.passwordTextField.textField.text
+        let user = User(email: email!, password: password!)
+
+        user.login { success in
+            self.loginBoxView.loginButton?.enabled = true
+        }
     }
 
     override func didReceiveMemoryWarning() {

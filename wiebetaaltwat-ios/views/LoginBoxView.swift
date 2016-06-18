@@ -10,7 +10,6 @@ import UIKit
 
 class LoginBoxView: View {
 
-
     let loginButtonMargin: CGFloat = 8.0
     var inputFieldHeight: CGFloat!
 
@@ -33,6 +32,7 @@ class LoginBoxView: View {
         emailTextField = LabeledTextInput(icon: "account.png", placeholder: "Email", frame: emailTextFieldFrame)
         emailTextField.textField.keyboardType = .EmailAddress
         emailTextField.textField.autocorrectionType = .No
+        emailTextField.textField.autocapitalizationType = .None
         emailTextField.textField.returnKeyType = .Next
 
         let passwordTextFieldFrame = CGRect(x: 0, y: emailTextFieldFrame.maxY - 1, width: frame.width, height: inputFieldHeight)
@@ -49,7 +49,7 @@ class LoginBoxView: View {
 
         loginButton = UIButton(frame: CGRect(x: 0, y: frame.maxY - loginButtonHeight - 20, width: frame.width, height: loginButtonHeight))
         loginButton!.layer.cornerRadius = 1.0
-        loginButton!.backgroundColor = UIColor(colorCode: "FF8000")
+        loginButton!.backgroundColor = UIColor(colorCode: "FF7900")
 
         loginButton!.titleLabel!.font = UIFont(name: "HelveticaNeue", size: loginButtonHeight * 0.4)
         loginButton!.setTitle("Login", forState: .Normal)
@@ -60,8 +60,6 @@ class LoginBoxView: View {
     }
 
     func loginButtonClicked(sender: UIButton) {
-        loginButton?.enabled = false
-
         // call delegate
         delegate.loginButtonClicked(sender)
     }
