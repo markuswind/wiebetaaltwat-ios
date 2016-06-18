@@ -27,10 +27,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         log.addDestination(console)
 
         // set root viewcontroller
-        window!.rootViewController = LoginViewController()
+        window!.rootViewController = getFirstViewController()
         window!.makeKeyAndVisible()
 
         return true
+    }
+
+    private func getFirstViewController() -> UIViewController {
+        let navigationController = NavigationController()
+        let loginViewController = LoginViewController()
+
+        navigationController.viewControllers.append(loginViewController)
+
+        return navigationController
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -38,16 +47,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
-        // TODO:: check if possible to set timers for notifications
-        //        if so, maybe check card state if active?
+
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
-        // TODO:: login cards in cardoverviewcontroller again (here?)
+
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-        // TODO:: login cards in cardoverviewcontroller (or maybe here?)
+
     }
     
     func applicationWillTerminate(application: UIApplication) {
