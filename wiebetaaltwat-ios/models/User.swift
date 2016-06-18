@@ -6,7 +6,9 @@
 //  Copyright © 2016 Wind. All rights reserved.
 //
 
-class User {
+import Foundation
+
+class User: NSCoder {
 
     var scraper: Scraper!
 
@@ -19,8 +21,24 @@ class User {
     init(email: String, password: String) {
         self.email = email
         self.password = password
+        super.init()
 
         scraper = Scraper(user: self)
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        email = aDecoder.decodeObjectForKey("email") as! String
+        password = aDecoder.decodeObjectForKey("password") as! String
+        super.init()
+
+        scraper = Scraper(user: self)
+    }
+
+    func save() {
+        let data = NSKeyedArchiver.archivedDataWithRootObject(self)
+        let userdefaults = NSUserDefaults.standardUserDefaults()
+        userdefaults.setObject(data, forKey: "user")
+        userdefaults.synchronize()
     }
 
     func login(completion: (Bool) -> ()) {
@@ -33,6 +51,11 @@ class User {
         scraper.getGroups { groups in
             self.groups = groups
         }
+    }
+
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(self.email, forKey: "email")
+        aCoder.encodeObject(self.password, forKey: "password")
     }
 
 }

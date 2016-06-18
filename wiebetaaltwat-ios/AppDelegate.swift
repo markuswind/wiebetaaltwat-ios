@@ -27,19 +27,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         log.addDestination(console)
 
         // set root viewcontroller
-        window!.rootViewController = getFirstViewController()
+        let navigationController = NavigationController()
+        var loginViewController = LoginViewController(user: nil)
+
+        if let user = retrieveSavedUser() {
+            loginViewController = LoginViewController(user: user)
+        }
+
+        navigationController.viewControllers.append(loginViewController)
+
+        window!.rootViewController = navigationController
         window!.makeKeyAndVisible()
 
         return true
     }
 
-    private func getFirstViewController() -> UIViewController {
-        let navigationController = NavigationController()
-        let loginViewController = LoginViewController()
+    private func retrieveSavedUser() -> User? {
+        var user: User?
 
-        navigationController.viewControllers.append(loginViewController)
+        let userdefaults = NSUserDefaults.standardUserDefaults()
+        let data = userdefaults.objectForKey("user")
 
-        return navigationController
+        if let data = data as? NSData {
+            user = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? User
+        }
+        
+        return user
     }
 
     func applicationWillResignActive(application: UIApplication) {

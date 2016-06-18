@@ -31,6 +31,8 @@
 		280833F41D15A4020013358A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280833F31D15A4020013358A /* Client.swift */; };
 		281569861D15C7370028C6CD /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281569851D15C7370028C6CD /* Group.swift */; };
 		2815698C1D15E3030028C6CD /* String+Replace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815698B1D15E3030028C6CD /* String+Replace.swift */; };
+		2815698E1D15EB6B0028C6CD /* GroupOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815698D1D15EB6B0028C6CD /* GroupOverviewController.swift */; };
+		281569921D15EC6B0028C6CD /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281569911D15EC6B0028C6CD /* GroupTableViewCell.swift */; };
 		287C04891D15512700F42CF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C04881D15512700F42CF3 /* LoginViewController.swift */; };
 		287C048E1D15512700F42CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 287C048D1D15512700F42CF3 /* Assets.xcassets */; };
 		287C04911D15512700F42CF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287C048F1D15512700F42CF3 /* LaunchScreen.storyboard */; };
@@ -79,6 +81,8 @@
 		280833F31D15A4020013358A /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		281569851D15C7370028C6CD /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		2815698B1D15E3030028C6CD /* String+Replace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Replace.swift"; sourceTree = "<group>"; };
+		2815698D1D15EB6B0028C6CD /* GroupOverviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupOverviewController.swift; sourceTree = "<group>"; };
+		281569911D15EC6B0028C6CD /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupTableViewCell.swift; path = tableviewcells/GroupTableViewCell.swift; sourceTree = "<group>"; };
 		287C04831D15512700F42CF3 /* wiebetaaltwat-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wiebetaaltwat-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		287C04881D15512700F42CF3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		287C048D1D15512700F42CF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "wiebetaaltwat-ios/Assets.xcassets"; sourceTree = "<group>"; };
@@ -126,6 +130,14 @@
 			name = icons;
 			sourceTree = "<group>";
 		};
+		281569901D15EC380028C6CD /* tableviewcells */ = {
+			isa = PBXGroup;
+			children = (
+				281569911D15EC6B0028C6CD /* GroupTableViewCell.swift */,
+			);
+			name = tableviewcells;
+			sourceTree = "<group>";
+		};
 		287C047A1D15512700F42CF3 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +169,7 @@
 				287C049B1D15629700F42CF3 /* models */,
 				287C049A1D15628B00F42CF3 /* scrapers */,
 				287C049D1D1562A400F42CF3 /* supporting files */,
+				281569901D15EC380028C6CD /* tableviewcells */,
 				287C049C1D15629C00F42CF3 /* viewcontrollers */,
 				287C049E1D1562B200F42CF3 /* views */,
 				280833C11D15642A0013358A /* AppDelegate.swift */,
@@ -206,6 +219,7 @@
 			children = (
 				280833D91D156E050013358A /* NavigationController.swift */,
 				287C04881D15512700F42CF3 /* LoginViewController.swift */,
+				2815698D1D15EB6B0028C6CD /* GroupOverviewController.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -315,10 +329,12 @@
 				280833D41D1569AB0013358A /* LogoHeaderView.swift in Sources */,
 				280833C21D15642A0013358A /* AppDelegate.swift in Sources */,
 				280833F21D1594300013358A /* Scraper.swift in Sources */,
+				281569921D15EC6B0028C6CD /* GroupTableViewCell.swift in Sources */,
 				280833F41D15A4020013358A /* Client.swift in Sources */,
 				287C04A81D15637200F42CF3 /* View.swift in Sources */,
 				280833F01D158BBC0013358A /* User.swift in Sources */,
 				2815698C1D15E3030028C6CD /* String+Replace.swift in Sources */,
+				2815698E1D15EB6B0028C6CD /* GroupOverviewController.swift in Sources */,
 				287C04A41D15635B00F42CF3 /* Settings.swift in Sources */,
 				280833D61D1569EE0013358A /* LoginBoxView.swift in Sources */,
 				280833D81D156A470013358A /* LabeledTextField.swift in Sources */,

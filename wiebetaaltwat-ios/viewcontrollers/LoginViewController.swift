@@ -10,11 +10,21 @@ import UIKit
 
 class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDelegate {
 
+    var user: User?
     let boxViewHeight: CGFloat = SETTINGS.screenHeight / 2 - 80
 
     var logoHeaderView: LogoHeaderView!
     var boxView: BoxView!
     var loginBoxView: LoginBoxView!
+
+    init(user: User?) {
+        self.user = user
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         view.backgroundColor = UIColor(colorCode: "F4F4F4")
@@ -23,6 +33,10 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
         addLogoHeaderView()
         addLoginBoxView()
         addFooter()
+
+        if let _ = user {
+            login()
+        }
     }
 
     private func addLogoHeaderView() {
@@ -83,18 +97,28 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
 
     func loginButtonClicked(sender: UIButton!) {
         // TODO: - check if valid email and password values
-        loginBoxView.loginButton?.enabled = false
 
         let email = loginBoxView.emailTextField.textField.text
         let password = loginBoxView.passwordTextField.textField.text
-        let user = User(email: email!, password: password!)
+        self.user = User(email: email!, password: password!)
 
-        user.login { success in
+        login()
+    }
+
+    func login() {
+        loginBoxView.loginButton?.enabled = false
+
+        user!.login { success in
             if success {
-                user.getGroups({ 
-                    log.debug("should set groupoverviewcontroller now with groups")
-                })
+                self.user!.save()
+
+                let groupOverViewController = GroupOverViewController()
+                groupOverViewController.user = self.user!
+
+                self.navigationController?.setViewControllers([groupOverViewController], animated: true)
             } else {
+                // TODO: - show error message
+
                 self.loginBoxView.loginButton?.enabled = true
             }
         }
