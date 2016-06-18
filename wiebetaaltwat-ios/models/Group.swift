@@ -6,4 +6,20 @@
 //  Copyright © 2016 Wind. All rights reserved.
 //
 
-import Foundation
+class Group {
+
+    let id: String!
+    let name: String!
+
+    var ownBalance: String!
+    var highestBalance: String!
+    var highestBalanceUser: String!
+    var lowestBalance: String!
+    var lowestBalanceUser: String!
+
+    init(id: String, name: String) {
+        self.id = id
+        self.name = name
+    }
+
+}

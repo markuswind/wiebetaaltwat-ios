@@ -49,4 +49,57 @@ class Scraper {
         }
     }
 
+    func getGroups(completion: [Group]? -> ()) {
+        let parameters: [String: AnyObject] = [:]
+
+        client.request(manager, method: .GET, url: base_url, parameters: parameters) { html in
+            var groups: [Group] = []
+
+            if let _ = html {
+                if let doc = Kanna.HTML(html: html!, encoding: NSUTF8StringEncoding) {
+                    if let table = doc.at_css("#content-view > table > tbody") {
+                        for (_, tr) in table.css("tr").enumerate() {
+                            let columns = tr.css("td")
+                            let group = self.createGroup(columns)
+
+                            groups.append(group)
+                        }
+                    }
+                }
+            }
+
+            completion(groups)
+        }
+    }
+
+    private func createGroup(columns: XMLNodeSet) -> Group {
+        let idtext = columns.at(0)?.toHTML
+
+        // create inital group
+        let id = re.match(".*lid=(\\d*)&", idtext!)!.group(1)
+        let name = columns.at(0)?.text
+        let group = Group(id: id!, name: name!)
+
+        // strip balance values
+        let ownBalance = re.match(".*€.(.\\d*,\\d*)", columns.at(1)!.toHTML!)!.group(1)
+
+        let highestBalanceMatchObject = re.match("<td>(.*).<.*€(.\\d*,\\d*)", columns.at(2)!.toHTML!)
+        let highestBalance = highestBalanceMatchObject?.group(2)?.trim()
+        let highestBalanceUser = highestBalanceMatchObject?.group(1)
+
+        let lowestBalanceMatchObject = re.match("<td>(.*).<.*€.(.\\d*,\\d*)", columns.at(3)!.toHTML!)
+        let lowestBalance = lowestBalanceMatchObject?.group(2)?.trim()
+        let lowestBalanceUser = lowestBalanceMatchObject?.group(1)
+
+        // set values
+        group.ownBalance = ownBalance
+        group.highestBalance = highestBalance
+        group.highestBalanceUser = highestBalanceUser
+        group.lowestBalance = lowestBalance
+        group.lowestBalanceUser = lowestBalanceUser
+
+        // done
+        return group
+    }
+
 }

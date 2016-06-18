@@ -90,7 +90,13 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
         let user = User(email: email!, password: password!)
 
         user.login { success in
-            self.loginBoxView.loginButton?.enabled = true
+            if success {
+                user.getGroups({ 
+                    log.debug("should set groupoverviewcontroller now with groups")
+                })
+            } else {
+                self.loginBoxView.loginButton?.enabled = true
+            }
         }
     }
 

@@ -14,6 +14,8 @@ class User {
     let email: String!
     let password: String!
 
+    var groups: [Group]?
+
     init(email: String, password: String) {
         self.email = email
         self.password = password
@@ -25,6 +27,12 @@ class User {
         scraper.login({ success in
             completion(success)
         })
+    }
+
+    func getGroups(completion: () -> ()) {
+        scraper.getGroups { groups in
+            self.groups = groups
+        }
     }
 
 }

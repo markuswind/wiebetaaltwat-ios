@@ -29,6 +29,8 @@
 		280833F01D158BBC0013358A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280833EF1D158BBC0013358A /* User.swift */; };
 		280833F21D1594300013358A /* Scraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280833F11D1594300013358A /* Scraper.swift */; };
 		280833F41D15A4020013358A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280833F31D15A4020013358A /* Client.swift */; };
+		281569861D15C7370028C6CD /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281569851D15C7370028C6CD /* Group.swift */; };
+		2815698C1D15E3030028C6CD /* String+Replace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815698B1D15E3030028C6CD /* String+Replace.swift */; };
 		287C04891D15512700F42CF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C04881D15512700F42CF3 /* LoginViewController.swift */; };
 		287C048E1D15512700F42CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 287C048D1D15512700F42CF3 /* Assets.xcassets */; };
 		287C04911D15512700F42CF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287C048F1D15512700F42CF3 /* LaunchScreen.storyboard */; };
@@ -75,6 +77,8 @@
 		280833EF1D158BBC0013358A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		280833F11D1594300013358A /* Scraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scraper.swift; sourceTree = "<group>"; };
 		280833F31D15A4020013358A /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		281569851D15C7370028C6CD /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		2815698B1D15E3030028C6CD /* String+Replace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Replace.swift"; sourceTree = "<group>"; };
 		287C04831D15512700F42CF3 /* wiebetaaltwat-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wiebetaaltwat-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		287C04881D15512700F42CF3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		287C048D1D15512700F42CF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "wiebetaaltwat-ios/Assets.xcassets"; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 			children = (
 				287C049F1D15634A00F42CF3 /* UIColor+HexCode.swift */,
 				287C04A01D15634A00F42CF3 /* UIImage+GrayScale.swift */,
+				2815698B1D15E3030028C6CD /* String+Replace.swift */,
 			);
 			path = categories;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 			children = (
 				280833F31D15A4020013358A /* Client.swift */,
 				280833EF1D158BBC0013358A /* User.swift */,
+				281569851D15C7370028C6CD /* Group.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 				280833DA1D156E050013358A /* NavigationController.swift in Sources */,
 				287C04A11D15634A00F42CF3 /* UIColor+HexCode.swift in Sources */,
 				287C04A21D15634A00F42CF3 /* UIImage+GrayScale.swift in Sources */,
+				281569861D15C7370028C6CD /* Group.swift in Sources */,
 				287C04A71D15637200F42CF3 /* BoxView.swift in Sources */,
 				287C04891D15512700F42CF3 /* LoginViewController.swift in Sources */,
 				280833D41D1569AB0013358A /* LogoHeaderView.swift in Sources */,
@@ -311,6 +318,7 @@
 				280833F41D15A4020013358A /* Client.swift in Sources */,
 				287C04A81D15637200F42CF3 /* View.swift in Sources */,
 				280833F01D158BBC0013358A /* User.swift in Sources */,
+				2815698C1D15E3030028C6CD /* String+Replace.swift in Sources */,
 				287C04A41D15635B00F42CF3 /* Settings.swift in Sources */,
 				280833D61D1569EE0013358A /* LoginBoxView.swift in Sources */,
 				280833D81D156A470013358A /* LabeledTextField.swift in Sources */,
