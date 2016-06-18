@@ -51,6 +51,7 @@ class LabeledTextInput: View {
 
         textField = UITextField(frame: CGRect(x: xPosition, y: iconImageView.frame.minY, width: width, height: iconImageView.frame.height))
         textField.placeholder = placeholder
+        textField.textColor = UIColor(colorCode: "666666")
 
         addSubview(iconImageView)
         addSubview(textField)
