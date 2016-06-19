@@ -18,6 +18,7 @@ class GroupOverViewController: UITableViewController {
         // setup styling
         tableView.backgroundColor = UIColor(colorCode: "F4F4F4")
         navigationItem.title = "Group Overview"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
 
         // setup tableview
         tableView.registerClass(GroupTableViewCell.self, forCellReuseIdentifier: "GroupTableViewCell")

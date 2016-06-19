@@ -29,10 +29,10 @@ class GroupDetailViewController: UITableViewController {
 
         // setup tableview
         tableView.registerClass(GroupTableViewCell.self, forCellReuseIdentifier: "PaymentTableViewCell")
-        tableView.rowHeight = 120
+        tableView.rowHeight = 100
 
         // load payments
-        group.getPayments { 
+        group.getPayments {
             self.payments = self.group.payments
             self.tableView.reloadData()
         }
@@ -40,7 +40,7 @@ class GroupDetailViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let _ = payments {
-            payments.count
+            return payments.count
         }
 
         return 0
