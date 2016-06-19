@@ -25,4 +25,13 @@ class Group {
         self.payments = []
     }
 
+    func getPayments(completion: () ->()) {
+        Scraper.sharedScraper.getGroupPayments(id) { payments in
+            self.payments = []
+            self.payments = payments
+
+            completion()
+        }
+    }
+
 }

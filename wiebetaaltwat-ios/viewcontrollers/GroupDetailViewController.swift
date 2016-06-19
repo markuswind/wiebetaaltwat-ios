@@ -30,6 +30,12 @@ class GroupDetailViewController: UITableViewController {
         // setup tableview
         tableView.registerClass(GroupTableViewCell.self, forCellReuseIdentifier: "PaymentTableViewCell")
         tableView.rowHeight = 120
+
+        // load payments
+        group.getPayments { 
+            self.payments = self.group.payments
+            self.tableView.reloadData()
+        }
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

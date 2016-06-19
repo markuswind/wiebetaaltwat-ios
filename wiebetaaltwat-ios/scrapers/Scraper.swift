@@ -126,12 +126,27 @@ class Scraper: NSObject {
 
             if let _ = html {
                 if let doc = Kanna.HTML(html: html!, encoding: NSUTF8StringEncoding) {
-                    // TODO:: scrape table + create and append payment models
+                    if let table = doc.at_css("#list > tbody") {
+                        for (_, tr) in table.css("tr").enumerate() {
+                            let columns = tr.css("td")
+                            let payment = self.createPayment(columns)
+
+//                            payments.append(payment)
+                        }
+                    }
                 }
             }
 
             completion(payments)
         }
+    }
+
+    private func createPayment(columns: XMLNodeSet) -> Payment {
+        log.debug("Paid by: \(columns.at(0))")
+        log.debug("Description: \(columns.at(1))")
+//        log.debug("Amount: \(columns.at(1))")
+
+        return Payment(by: "", description: "", amount: "", date: NSDate())
     }
 
 }
