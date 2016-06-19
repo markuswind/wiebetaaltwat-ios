@@ -10,15 +10,19 @@ import Alamofire
 import Kanna
 import PySwiftyRegex
 
-class Scraper {
+class Scraper: NSObject {
 
-    let user: User!
+    var user: User!
     let base_url = "https://www.wiebetaaltwat.nl"
     let client = Client()
     let manager = Manager()
 
-    init(user: User) {
-        self.user = user
+    class var sharedScraper: Scraper {
+        struct Singleton {
+            static let instance = Scraper()
+        }
+
+        return Singleton.instance
     }
 
     func login(completion: (Bool) -> ()) {
