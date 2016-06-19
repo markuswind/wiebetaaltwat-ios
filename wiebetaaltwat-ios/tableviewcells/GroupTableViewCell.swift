@@ -38,7 +38,7 @@ class GroupTableViewCell: UITableViewCell {
     }
 
     private func createInfoLabels() {
-        groupNameLabel = UILabel(frame: CGRect(x: 8, y: 8, width: frame.width / 3, height: 25))
+        groupNameLabel = UILabel(frame: CGRect(x: 8, y: 8, width: frame.width / 2, height: 25))
         groupNameLabel.font = UIFont(name: "HelveticaNeue-Light", size: 15.0)
         groupNameLabel.text = group.name
 

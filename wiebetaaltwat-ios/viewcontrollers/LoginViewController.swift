@@ -111,17 +111,25 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
         user!.login { success in
             if success {
                 self.user!.save()
-
-                let groupOverViewController = GroupOverViewController()
-                groupOverViewController.user = self.user!
-
-                self.navigationController?.setViewControllers([groupOverViewController], animated: true)
+                self.loginSucceeded()
             } else {
                 // TODO: - show error message
 
                 self.loginBoxView.loginButton?.enabled = true
             }
         }
+    }
+
+    private func loginSucceeded() {
+        let tabBarController = TabBarController()
+
+        if let navigationController = tabBarController.viewControllers![0] as? NavigationController {
+            if let groupOverViewController = navigationController.viewControllers[0] as? GroupOverViewController {
+                groupOverViewController.user = self.user!
+            }
+        }
+
+        presentViewController(tabBarController, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
