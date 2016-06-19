@@ -17,9 +17,14 @@ class Group {
     var lowestBalance: String!
     var lowestBalanceUser: String!
 
+    var payments: [Payment]!
+
     init(id: String, name: String) {
         self.id = id
         self.name = name
+        self.payments = []
     }
+
+
 
 }
