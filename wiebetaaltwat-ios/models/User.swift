@@ -16,6 +16,7 @@ class User: NSCoder {
     let email: String!
     let password: String!
 
+    // MARK: - status variables (TODO: save to .json?)
     var groups: [Group]?
 
     init(email: String, password: String) {
@@ -50,6 +51,8 @@ class User: NSCoder {
     func getGroups(completion: () -> ()) {
         scraper.getGroups { groups in
             self.groups = groups
+
+            completion()
         }
     }
 

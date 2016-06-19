@@ -69,6 +69,13 @@ class Scraper {
             }
 
             completion(groups)
+
+            // TODO: - delete log for testing purposes
+            if groups.count > 0 {
+                log.verbose("successfully scraped groups (count: \(groups.count))")
+            } else {
+                log.warning("scraping groups failed")
+            }
         }
     }
 

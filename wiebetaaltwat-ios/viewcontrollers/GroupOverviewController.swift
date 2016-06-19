@@ -21,16 +21,18 @@ class GroupOverViewController: UITableViewController {
 
         // setup tableview
         tableView.registerClass(GroupTableViewCell.self, forCellReuseIdentifier: "GroupTableViewCell")
+        tableView.rowHeight = 150
 
         // load groups
         user.getGroups({
             self.groups = self.user.groups
+            self.tableView.reloadData()
         })
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let _ = groups {
-            groups.count
+            return groups.count
         }
 
         return 0
