@@ -131,7 +131,9 @@ class Scraper: NSObject {
                             let columns = tr.css("td")
                             let payment = self.createPayment(columns)
 
-//                            payments.append(payment)
+                            if let _ = payment {
+                                payments.append(payment!)
+                            }
                         }
                     }
                 }
@@ -141,12 +143,44 @@ class Scraper: NSObject {
         }
     }
 
-    private func createPayment(columns: XMLNodeSet) -> Payment {
-        log.debug("Paid by: \(columns.at(0))")
-        log.debug("Description: \(columns.at(1))")
-//        log.debug("Amount: \(columns.at(1))")
+    private func createPayment(columns: XMLNodeSet) -> Payment? {
+        if columns.count < 5 { // sometimes it includes a random tr with padding
+            return nil
+        }
 
-        return Payment(by: "", description: "", amount: "", date: NSDate())
+        // get inital values
+        let by = columns.at(0)!.text
+        let description = columns.at(1)!.text
+
+        let amountMatchObject = re.match(".*€.(.\\d*,\\d*)", columns.at(2)!.toHTML!)
+        let amount = amountMatchObject?.group(1)?.trim()
+
+        // get date
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let date = dateFormatter.dateFromString(columns.at(3)!.text!)
+
+        // create inital payment
+        let payment = Payment(by: by!, description: description!, amount: amount!, date: date!)
+
+        // add participants
+        let participants = columns.at(4)!.text!.componentsSeparatedByString(",")
+
+        for var participant in participants {
+            participant = participant.trim()
+
+            let amountMatchObject = re.match("(.*)\\s(\\d*)x", participant)
+            if let _ = amountMatchObject?.group(1) {
+                let name = amountMatchObject?.group(1)!
+                let amount = Int(amountMatchObject!.group(2)!)
+
+                payment.addParticipant(name!, amount: amount!)
+            } else {
+                payment.addParticipant(participant, amount: 1)
+            }
+        }
+
+        return payment
     }
 
 }
