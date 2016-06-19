@@ -25,6 +25,7 @@ class Scraper: NSObject {
         return Singleton.instance
     }
 
+    // MARK: - Login scraping
     func login(completion: (Bool) -> ()) {
         let parameters: [String: AnyObject] = [
             "action": "login",
@@ -53,6 +54,7 @@ class Scraper: NSObject {
         }
     }
 
+    // MARK: - Group scraping
     func getGroups(completion: [Group]? -> ()) {
         let parameters: [String: AnyObject] = [:]
 
@@ -111,6 +113,25 @@ class Scraper: NSObject {
 
         // done
         return group
+    }
+
+    func getGroupPayments(id: String, completion: [Payment]? -> ()) {
+        let parameters: [String: AnyObject] = [
+            "lid": id,
+            "page": "balance"
+        ]
+
+        client.request(manager, method: .GET, url: base_url, parameters: parameters) { html in
+            var payments: [Payment] = []
+
+            if let _ = html {
+                if let doc = Kanna.HTML(html: html!, encoding: NSUTF8StringEncoding) {
+                    // TODO:: scrape table + create and append payment models
+                }
+            }
+
+            completion(payments)
+        }
     }
 
 }

@@ -25,6 +25,4 @@ class Group {
         self.payments = []
     }
 
-
-
 }
