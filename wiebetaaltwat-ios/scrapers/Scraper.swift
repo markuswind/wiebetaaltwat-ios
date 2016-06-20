@@ -129,10 +129,9 @@ class Scraper: NSObject {
                     if let table = doc.at_css("#list > tbody") {
                         for (_, tr) in table.css("tr").enumerate() {
                             let columns = tr.css("td")
-                            let payment = self.createPayment(columns)
 
-                            if let _ = payment {
-                                payments.append(payment!)
+                            if columns.count > 4 { // sometimes it includes a random row with padding only
+                                payments.append(self.createPayment(columns))
                             }
                         }
                     }
@@ -143,11 +142,7 @@ class Scraper: NSObject {
         }
     }
 
-    private func createPayment(columns: XMLNodeSet) -> Payment? {
-        if columns.count < 5 { // sometimes it includes a random tr with padding
-            return nil
-        }
-
+    private func createPayment(columns: XMLNodeSet) -> Payment {
         // get inital values
         let by = columns.at(0)!.text
         let description = columns.at(1)!.text
@@ -155,12 +150,11 @@ class Scraper: NSObject {
         let amountMatchObject = re.match(".*€.(.\\d*,\\d*)", columns.at(2)!.toHTML!)
         let amount = amountMatchObject?.group(1)?.trim()
 
-        // get date
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         let date = dateFormatter.dateFromString(columns.at(3)!.text!)
 
-        // create inital payment
+        // create initial payment
         let payment = Payment(by: by!, description: description!, amount: amount!, date: date!)
 
         // add participants
@@ -180,6 +174,7 @@ class Scraper: NSObject {
             }
         }
 
+        // done
         return payment
     }
 

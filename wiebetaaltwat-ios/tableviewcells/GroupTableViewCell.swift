@@ -74,7 +74,12 @@ class GroupTableViewCell: UITableViewCell {
         highestBalanceInfoLabel.text = "Hoogste stand"
         highestBalanceInfoLabel.textAlignment = .Center
 
-        highestBalanceLabel = UILabel(frame: CGRect(x: highestBalanceInfoLabel.frame.minX, y: 115, width: highestBalanceInfoLabel.frame.width, height: 17.5))
+        highestBalanceUserLabel = UILabel(frame: CGRect(x: highestBalanceInfoLabel.frame.minX, y: highestBalanceInfoLabel.frame.maxY, width: frame.width / 3 - 16, height: 17.5))
+        highestBalanceUserLabel.font = UIFont(name: "HelveticaNeue-Light", size: 10)
+        highestBalanceUserLabel.text = group.highestBalanceUser
+        highestBalanceUserLabel.textAlignment = .Center
+
+        highestBalanceLabel = UILabel(frame: CGRect(x: highestBalanceInfoLabel.frame.minX, y: highestBalanceUserLabel.frame.maxY, width: highestBalanceInfoLabel.frame.width, height: 17.5))
         highestBalanceLabel.font = UIFont(name: "HelveticaNeue-Lighter", size: 15)
         highestBalanceLabel.text = "€" + group.highestBalance
         highestBalanceLabel.textAlignment = .Center
@@ -83,6 +88,7 @@ class GroupTableViewCell: UITableViewCell {
         verticalSeparator.backgroundColor = UIColor(colorCode: "C2C2C2")
 
         addSubview(highestBalanceInfoLabel)
+        addSubview(highestBalanceUserLabel)
         addSubview(highestBalanceLabel)
         addSubview(verticalSeparator)
     }
@@ -93,12 +99,18 @@ class GroupTableViewCell: UITableViewCell {
         lowestBalanceInfoLabel.text = "Laagste stand"
         lowestBalanceInfoLabel.textAlignment = .Center
 
-        lowestBalanceLabel = UILabel(frame: CGRect(x: lowestBalanceInfoLabel.frame.minX, y: 115, width: lowestBalanceInfoLabel.frame.width, height: 17.5))
+        lowestBalanceUserLabel = UILabel(frame: CGRect(x: lowestBalanceInfoLabel.frame.minX, y: lowestBalanceInfoLabel.frame.maxY, width: frame.width / 3 - 16, height: 17.5))
+        lowestBalanceUserLabel.font = UIFont(name: "HelveticaNeue-Light", size: 10)
+        lowestBalanceUserLabel.text = group.lowestBalanceUser
+        lowestBalanceUserLabel.textAlignment = .Center
+
+        lowestBalanceLabel = UILabel(frame: CGRect(x: lowestBalanceInfoLabel.frame.minX, y: lowestBalanceUserLabel.frame.maxY, width: lowestBalanceInfoLabel.frame.width, height: 17.5))
         lowestBalanceLabel.font = UIFont(name: "HelveticaNeue-Lighter", size: 15)
         lowestBalanceLabel.text = "€" + group.lowestBalance
         lowestBalanceLabel.textAlignment = .Center
 
         addSubview(lowestBalanceInfoLabel)
+        addSubview(lowestBalanceUserLabel)
         addSubview(lowestBalanceLabel)
     }
 
