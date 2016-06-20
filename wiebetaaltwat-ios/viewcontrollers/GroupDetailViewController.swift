@@ -26,6 +26,8 @@ class GroupDetailViewController: UITableViewController {
         // setup styling
         tableView.backgroundColor = UIColor(colorCode: "F4F4F4")
         navigationItem.title = group.name
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .Plain, target: nil, action: nil)
 
         // setup tableview
         tableView.registerClass(GroupTableViewCell.self, forCellReuseIdentifier: "PaymentTableViewCell")

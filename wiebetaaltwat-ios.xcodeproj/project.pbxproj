@@ -34,6 +34,9 @@
 		2815698C1D15E3030028C6CD /* String+Replace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815698B1D15E3030028C6CD /* String+Replace.swift */; };
 		2815698E1D15EB6B0028C6CD /* GroupOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815698D1D15EB6B0028C6CD /* GroupOverviewController.swift */; };
 		281569921D15EC6B0028C6CD /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281569911D15EC6B0028C6CD /* GroupTableViewCell.swift */; };
+		285A793B1D17F27A00F3689D /* CreatePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A793A1D17F27A00F3689D /* CreatePaymentViewController.swift */; };
+		285A793D1D17F55800F3689D /* CalculatorKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285A793C1D17F55800F3689D /* CalculatorKeyboard.framework */; };
+		285A793E1D17F55800F3689D /* CalculatorKeyboard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 285A793C1D17F55800F3689D /* CalculatorKeyboard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		287C04891D15512700F42CF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C04881D15512700F42CF3 /* LoginViewController.swift */; };
 		287C048E1D15512700F42CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 287C048D1D15512700F42CF3 /* Assets.xcassets */; };
 		287C04911D15512700F42CF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287C048F1D15512700F42CF3 /* LaunchScreen.storyboard */; };
@@ -55,6 +58,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				280833D11D15674D0013358A /* SwiftyBeaver.framework in Embed Frameworks */,
+				285A793E1D17F55800F3689D /* CalculatorKeyboard.framework in Embed Frameworks */,
 				280833C91D15674D0013358A /* Alamofire.framework in Embed Frameworks */,
 				280833CF1D15674D0013358A /* PySwiftyRegex.framework in Embed Frameworks */,
 				280833CB1D15674D0013358A /* AnimatedTabBar.framework in Embed Frameworks */,
@@ -88,6 +92,8 @@
 		2815698B1D15E3030028C6CD /* String+Replace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Replace.swift"; sourceTree = "<group>"; };
 		2815698D1D15EB6B0028C6CD /* GroupOverviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupOverviewController.swift; sourceTree = "<group>"; };
 		281569911D15EC6B0028C6CD /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupTableViewCell.swift; path = tableviewcells/GroupTableViewCell.swift; sourceTree = "<group>"; };
+		285A793A1D17F27A00F3689D /* CreatePaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePaymentViewController.swift; sourceTree = "<group>"; };
+		285A793C1D17F55800F3689D /* CalculatorKeyboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalculatorKeyboard.framework; path = Carthage/Build/iOS/CalculatorKeyboard.framework; sourceTree = "<group>"; };
 		287C04831D15512700F42CF3 /* wiebetaaltwat-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wiebetaaltwat-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		287C04881D15512700F42CF3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		287C048D1D15512700F42CF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "wiebetaaltwat-ios/Assets.xcassets"; sourceTree = "<group>"; };
@@ -109,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				280833D01D15674D0013358A /* SwiftyBeaver.framework in Frameworks */,
+				285A793D1D17F55800F3689D /* CalculatorKeyboard.framework in Frameworks */,
 				280833C81D15674D0013358A /* Alamofire.framework in Frameworks */,
 				280833CE1D15674D0013358A /* PySwiftyRegex.framework in Frameworks */,
 				280833CA1D15674D0013358A /* AnimatedTabBar.framework in Frameworks */,
@@ -152,6 +159,7 @@
 			children = (
 				280833C31D15674D0013358A /* Alamofire.framework */,
 				280833C41D15674D0013358A /* AnimatedTabBar.framework */,
+				285A793C1D17F55800F3689D /* CalculatorKeyboard.framework */,
 				280833C51D15674D0013358A /* Kanna.framework */,
 				280833C61D15674D0013358A /* PySwiftyRegex.framework */,
 				280833C71D15674D0013358A /* SwiftyBeaver.framework */,
@@ -232,6 +240,7 @@
 				288F6C111D16DB5600E2B875 /* GroupDetailViewController.swift */,
 				2815698D1D15EB6B0028C6CD /* GroupOverviewController.swift */,
 				2805EAAB1D169B0600C830C9 /* TabBarController.swift */,
+				285A793A1D17F27A00F3689D /* CreatePaymentViewController.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -349,6 +358,7 @@
 				280833F01D158BBC0013358A /* User.swift in Sources */,
 				2805EAAE1D169FCE00C830C9 /* Payment.swift in Sources */,
 				288F6C121D16DB5600E2B875 /* GroupDetailViewController.swift in Sources */,
+				285A793B1D17F27A00F3689D /* CreatePaymentViewController.swift in Sources */,
 				2815698C1D15E3030028C6CD /* String+Replace.swift in Sources */,
 				2815698E1D15EB6B0028C6CD /* GroupOverviewController.swift in Sources */,
 				287C04A41D15635B00F42CF3 /* Settings.swift in Sources */,
