@@ -11,7 +11,7 @@ import PySwiftyRegex
 
 class GroupScraper: BaseScraper {
 
-    func getGroupPayments(id: String, completion: [Payment]? -> ()) {
+    func getGroupOverview(id: String, completion: ([BalanceUser], [Payment]?) -> ()) {
         let parameters: [String: AnyObject] = [
             "lid": id,
             "page": "balance"
@@ -19,9 +19,24 @@ class GroupScraper: BaseScraper {
 
         client.request(.GET, url: base_url, parameters: parameters) { html in
             var payments: [Payment] = []
+            var balanceUsers: [BalanceUser] = []
 
             if let _ = html {
                 if let doc = Kanna.HTML(html: html!, encoding: NSUTF8StringEncoding) {
+                    // scrape user balance first
+                    let userBalanceName = doc.at_xpath("//*[@id=\"user-balance\"]/h3")?.text!
+                    let userBalanceAmount = doc.at_xpath("//*[@id=\"user-balance\"]/p/strong")?.text!.trim()
+
+                    balanceUsers.append(BalanceUser(name: userBalanceName!, balance: userBalanceAmount!))
+
+                    // scraper other users
+                    if let div = doc.at_css("#list-members-balance") {
+                        for (_, p) in div.css("p").enumerate() {
+                            balanceUsers.append(self.createBalanceUser(p))
+                        }
+                    }
+
+                    // scrape payments
                     if let table = doc.at_css("#list > tbody") {
                         for (_, tr) in table.css("tr").enumerate() {
                             let columns = tr.css("td")
@@ -34,8 +49,13 @@ class GroupScraper: BaseScraper {
                 }
             }
 
-            completion(payments)
+            completion(balanceUsers, payments)
         }
+    }
+
+    private func createBalanceUser(p: XMLElement) -> BalanceUser {
+
+        return BalanceUser(name: "", balance: "")
     }
 
     private func createPayment(columns: XMLNodeSet) -> Payment {

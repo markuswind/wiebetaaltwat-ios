@@ -34,7 +34,7 @@ class GroupDetailViewController: UITableViewController {
         tableView.rowHeight = 100
 
         // load payments
-        group.getPayments {
+        group.getGroupOverview{
             self.payments = self.group.payments
             self.tableView.reloadData()
         }

@@ -6,6 +6,18 @@
 //  Copyright © 2016 Wind. All rights reserved.
 //
 
+class BalanceUser {
+
+    let name: String!
+    let balance: String!
+
+    init(name: String, balance: String) {
+        self.name = name
+        self.balance = balance
+    }
+
+}
+
 class Group {
 
     let groupScraper = GroupScraper()
@@ -19,20 +31,29 @@ class Group {
     var lowestBalanceUser: String!
 
     var payments: [Payment]!
+    var balanceUsers: [BalanceUser]!
 
     init(id: String, name: String) {
         self.id = id
         self.name = name
         self.payments = []
+        self.balanceUsers = []
     }
 
-    func getPayments(completion: () ->()) {
-        groupScraper.getGroupPayments(id) { payments in
+    func getGroupOverview(completion: () -> ()) {
+        groupScraper.getGroupOverview(id) { balanceUsers, payments in
+            self.balanceUsers = []
+            self.balanceUsers = balanceUsers
+            
             self.payments = []
             self.payments = payments
 
             completion()
         }
+    }
+
+    func getBalanceUsers(completion: () -> ()) {
+        
     }
 
 }
