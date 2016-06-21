@@ -10,7 +10,8 @@ import Foundation
 
 class User: NSCoder {
 
-    let scraper = Scraper()
+    // create scrapers
+    let userScraper = UserScraper()
 
     // MARK: - variables saved in userdefaults
     let email: String!
@@ -23,16 +24,12 @@ class User: NSCoder {
         self.email = email
         self.password = password
         super.init()
-
-        scraper.user = self
     }
 
     required init(coder aDecoder: NSCoder) {
         email = aDecoder.decodeObjectForKey("email") as! String
         password = aDecoder.decodeObjectForKey("password") as! String
         super.init()
-
-        scraper.user = self
     }
 
     func save() {
@@ -43,13 +40,13 @@ class User: NSCoder {
     }
 
     func login(completion: (Bool) -> ()) {
-        scraper.login({ success in
+        userScraper.login(self, completion: { success in
             completion(success)
         })
     }
 
     func getGroups(completion: () -> ()) {
-        scraper.getGroups { groups in
+        userScraper.getGroups { groups in
             self.groups = groups
 
             completion()

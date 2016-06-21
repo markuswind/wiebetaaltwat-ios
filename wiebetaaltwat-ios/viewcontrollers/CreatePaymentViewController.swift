@@ -10,7 +10,7 @@ import UIKit
 
 class CreatePaymentViewController: UIViewController {
 
-    let scraper = Scraper()
+    let paymentScraper = PaymentScraper()
     let groupid: String!
     var participants: [Participant]!
 
@@ -32,7 +32,7 @@ class CreatePaymentViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .Done, target: nil, action: nil)
 
-        scraper.getInitialPaymentValues(groupid) { participants in
+        paymentScraper.getInitialPaymentValues(groupid) { participants in
             self.participants = participants
 
             // TODO: - create the input labels here?
