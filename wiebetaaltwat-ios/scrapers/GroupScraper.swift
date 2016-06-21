@@ -25,7 +25,8 @@ class GroupScraper: BaseScraper {
                 if let doc = Kanna.HTML(html: html!, encoding: NSUTF8StringEncoding) {
                     // scrape user balance first
                     let userBalanceName = doc.at_xpath("//*[@id=\"user-balance\"]/h3")?.text!
-                    let userBalanceAmount = doc.at_xpath("//*[@id=\"user-balance\"]/p/strong")?.text!.trim()
+                    var userBalanceAmount = doc.at_xpath("//*[@id=\"user-balance\"]/p/strong")?.text!
+                    userBalanceAmount = userBalanceAmount!.replace("€", replacement: "").trim()
 
                     balanceUsers.append(BalanceUser(name: userBalanceName!, balance: userBalanceAmount!))
 
@@ -54,8 +55,13 @@ class GroupScraper: BaseScraper {
     }
 
     private func createBalanceUser(p: XMLElement) -> BalanceUser {
+        let pString = p.toHTML
 
-        return BalanceUser(name: "", balance: "")
+        let balanceName = re.match(".*\"ellipsis\">(.*)</span>", pString!)?.group(1)
+        var balanceAmount = re.match(".*<strong.*\">(.*)</strong>", pString!)?.group(1)
+        balanceAmount = balanceAmount!.replace("€", replacement: "").trim()
+
+        return BalanceUser(name: balanceName!, balance: balanceAmount!)
     }
 
     private func createPayment(columns: XMLNodeSet) -> Payment {
