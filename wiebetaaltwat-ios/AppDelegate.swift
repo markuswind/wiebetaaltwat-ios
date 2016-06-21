@@ -1,5 +1,4 @@
 //
-//  AppDelegate.swift
 //  wiebetaaltwat-ios
 //
 //  Created by Markus Wind on 6/18/16.

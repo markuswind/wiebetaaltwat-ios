@@ -8,6 +8,7 @@
 
 class Group {
 
+    let scraper = Scraper()
     let id: String!
     let name: String!
 
@@ -26,7 +27,7 @@ class Group {
     }
 
     func getPayments(completion: () ->()) {
-        Scraper.sharedScraper.getGroupPayments(id) { payments in
+        scraper.getGroupPayments(id) { payments in
             self.payments = []
             self.payments = payments
 

@@ -10,6 +10,16 @@ import Alamofire
 
 class Client {
 
+    let manager = Manager()
+
+    class var sharedClient: Client {
+        struct Singleton {
+            static let instance = Client()
+        }
+
+        return Singleton.instance
+    }
+
     func getLoginSession(url: String, parameters: [String: AnyObject], completion: ([NSHTTPCookie]?, String?) -> ()) {
         Alamofire.request(.POST, url, parameters: parameters).responseString { response in
             if let
@@ -27,7 +37,7 @@ class Client {
         }
     }
 
-    func request(manager: Manager, method: Alamofire.Method, url: String, parameters: [String: AnyObject], completion: (String?) -> ()) {
+    func request(method: Alamofire.Method, url: String, parameters: [String: AnyObject], completion: (String?) -> ()) {
         manager.request(method, url, parameters: parameters, encoding: .URL, headers: Manager.defaultHTTPHeaders).responseString { response in
             if let html = response.result.value {
                 completion(html)

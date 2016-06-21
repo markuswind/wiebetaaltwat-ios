@@ -14,16 +14,7 @@ class Scraper: NSObject {
 
     var user: User!
     let base_url = "https://www.wiebetaaltwat.nl"
-    let client = Client()
-    let manager = Manager()
-
-    class var sharedScraper: Scraper {
-        struct Singleton {
-            static let instance = Scraper()
-        }
-
-        return Singleton.instance
-    }
+    let client = Client.sharedClient
 
     // MARK: - Login scraping
     func login(completion: (Bool) -> ()) {
@@ -42,7 +33,7 @@ class Scraper: NSObject {
                 } else {
                     for cookie in cookies {
                         if cookie.name == "PHPSESSID" {
-                            self.manager.session.configuration.HTTPCookieStorage?.setCookie(cookie)
+                            self.client.manager.session.configuration.HTTPCookieStorage?.setCookie(cookie)
                         }
                     }
 
@@ -58,7 +49,7 @@ class Scraper: NSObject {
     func getGroups(completion: [Group]? -> ()) {
         let parameters: [String: AnyObject] = [:]
 
-        client.request(manager, method: .GET, url: base_url, parameters: parameters) { html in
+        client.request(.GET, url: base_url, parameters: parameters) { html in
             var groups: [Group] = []
 
             if let _ = html {
@@ -121,7 +112,7 @@ class Scraper: NSObject {
             "page": "balance"
         ]
 
-        client.request(manager, method: .GET, url: base_url, parameters: parameters) { html in
+        client.request(.GET, url: base_url, parameters: parameters) { html in
             var payments: [Payment] = []
 
             if let _ = html {
@@ -155,7 +146,7 @@ class Scraper: NSObject {
         let date = dateFormatter.dateFromString(columns.at(3)!.text!)
 
         // create initial payment
-        let payment = Payment(by: by!, description: description!, amount: amount!, date: date!)
+        let payment = Payment(by: by!, byid: nil, description: description!, amount: amount!, date: date!)
 
         // add participants
         let participants = columns.at(4)!.text!.componentsSeparatedByString(",")
@@ -187,7 +178,7 @@ class Scraper: NSObject {
             "type": "add"
         ]
 
-        client.request(manager, method: .GET, url: base_url, parameters: parameters) { html in
+        client.request(.GET, url: base_url, parameters: parameters) { html in
             var participants: [Participant] = []
 
             if let _ = html {
@@ -200,9 +191,7 @@ class Scraper: NSObject {
                             let id = matchObject?.group(1)
                             let name = matchObject?.group(2)
 
-                            log.debug("adding participant - id: \(id), name: \(name)")
-
-                            participants.append(Participant(id: id, name: name!, amount: 0))
+                            participants.append(Participant(id: id!, name: name!, amount: 0))
                         }
                     }
                 }
@@ -210,6 +199,10 @@ class Scraper: NSObject {
 
             completion(participants)
         }
+    }
+
+    func createNewPaymentEntry(groupid: String, payment: Payment) {
+
     }
 
 }

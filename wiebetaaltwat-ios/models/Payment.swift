@@ -25,14 +25,16 @@ class Participant {
 class Payment {
 
     let by: String!
+    let byid: String?
     let description: String!
     let amount: String!
     let date: NSDate!
 
     var participants: [Participant]!
 
-    init(by: String, description: String, amount: String, date: NSDate) {
+    init(by: String, byid: String?, description: String, amount: String, date: NSDate) {
         self.by = by
+        self.byid = byid
         self.description = description
         self.amount = amount
         self.date = date
