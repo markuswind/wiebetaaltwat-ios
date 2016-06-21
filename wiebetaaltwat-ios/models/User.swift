@@ -10,7 +10,6 @@ import Foundation
 
 class User: NSCoder {
 
-    // create scrapers
     let userScraper = UserScraper()
 
     // MARK: - variables saved in userdefaults

@@ -9,7 +9,7 @@
 import Kanna
 import PySwiftyRegex
 
-class PaymentScraper: Scraper {
+class PaymentScraper: BaseScraper {
 
     func getInitialPaymentValues(groupid: String, completion: ([Participant]) -> ()) {
         let parameters = [

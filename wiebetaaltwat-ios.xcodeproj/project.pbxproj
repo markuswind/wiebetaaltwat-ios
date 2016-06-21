@@ -34,7 +34,7 @@
 		2815698C1D15E3030028C6CD /* String+Replace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815698B1D15E3030028C6CD /* String+Replace.swift */; };
 		2815698E1D15EB6B0028C6CD /* GroupOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815698D1D15EB6B0028C6CD /* GroupOverviewController.swift */; };
 		281569921D15EC6B0028C6CD /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281569911D15EC6B0028C6CD /* GroupTableViewCell.swift */; };
-		284838561D19999F002CA1D3 /* Scraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284838551D19999F002CA1D3 /* Scraper.swift */; };
+		284838561D19999F002CA1D3 /* BaseScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284838551D19999F002CA1D3 /* BaseScraper.swift */; };
 		284838581D199A0C002CA1D3 /* GroupScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284838571D199A0C002CA1D3 /* GroupScraper.swift */; };
 		2848385A1D199A69002CA1D3 /* PaymentScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284838591D199A69002CA1D3 /* PaymentScraper.swift */; };
 		285A793B1D17F27A00F3689D /* CreatePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A793A1D17F27A00F3689D /* CreatePaymentViewController.swift */; };
@@ -95,7 +95,7 @@
 		2815698B1D15E3030028C6CD /* String+Replace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Replace.swift"; sourceTree = "<group>"; };
 		2815698D1D15EB6B0028C6CD /* GroupOverviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupOverviewController.swift; sourceTree = "<group>"; };
 		281569911D15EC6B0028C6CD /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupTableViewCell.swift; path = tableviewcells/GroupTableViewCell.swift; sourceTree = "<group>"; };
-		284838551D19999F002CA1D3 /* Scraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scraper.swift; sourceTree = "<group>"; };
+		284838551D19999F002CA1D3 /* BaseScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseScraper.swift; sourceTree = "<group>"; };
 		284838571D199A0C002CA1D3 /* GroupScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupScraper.swift; sourceTree = "<group>"; };
 		284838591D199A69002CA1D3 /* PaymentScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentScraper.swift; sourceTree = "<group>"; };
 		285A793A1D17F27A00F3689D /* CreatePaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePaymentViewController.swift; sourceTree = "<group>"; };
@@ -222,9 +222,9 @@
 		287C049A1D15628B00F42CF3 /* scrapers */ = {
 			isa = PBXGroup;
 			children = (
-				280833F11D1594300013358A /* LoginScraper.swift */,
-				284838551D19999F002CA1D3 /* Scraper.swift */,
+				284838551D19999F002CA1D3 /* BaseScraper.swift */,
 				284838571D199A0C002CA1D3 /* GroupScraper.swift */,
+				280833F11D1594300013358A /* LoginScraper.swift */,
 				284838591D199A69002CA1D3 /* PaymentScraper.swift */,
 			);
 			path = scrapers;
@@ -359,7 +359,7 @@
 				287C04891D15512700F42CF3 /* LoginViewController.swift in Sources */,
 				280833D41D1569AB0013358A /* LogoHeaderView.swift in Sources */,
 				280833C21D15642A0013358A /* AppDelegate.swift in Sources */,
-				284838561D19999F002CA1D3 /* Scraper.swift in Sources */,
+				284838561D19999F002CA1D3 /* BaseScraper.swift in Sources */,
 				280833F21D1594300013358A /* LoginScraper.swift in Sources */,
 				281569921D15EC6B0028C6CD /* GroupTableViewCell.swift in Sources */,
 				2805EAAC1D169B0600C830C9 /* TabBarController.swift in Sources */,

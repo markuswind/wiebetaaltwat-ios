@@ -6,7 +6,7 @@
 //  Copyright © 2016 Wind. All rights reserved.
 //
 
-class Scraper {
+class BaseScraper {
 
     let base_url = "https://www.wiebetaaltwat.nl"
     let client = Client.sharedClient

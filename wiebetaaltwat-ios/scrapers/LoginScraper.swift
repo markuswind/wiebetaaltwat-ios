@@ -9,7 +9,7 @@
 import Kanna
 import PySwiftyRegex
 
-class UserScraper: Scraper {
+class UserScraper: BaseScraper {
 
     // MARK: - Login scraping
     func login(user: User, completion: (Bool) -> ()) {
