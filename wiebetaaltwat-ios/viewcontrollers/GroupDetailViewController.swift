@@ -27,7 +27,7 @@ class GroupDetailViewController: UITableViewController {
         tableView.backgroundColor = UIColor(colorCode: "F4F4F4")
         navigationItem.title = group.name
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .Plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(self.createButtonClicked(_:)))
 
         // setup tableview
         tableView.registerClass(GroupTableViewCell.self, forCellReuseIdentifier: "PaymentTableViewCell")
@@ -53,6 +53,11 @@ class GroupDetailViewController: UITableViewController {
         let paymentTableViewCell = PaymentTableViewCell(payment: payment, style: .Default, reuseIdentifier: "PaymentTableViewCell")
 
         return paymentTableViewCell
+    }
+
+    func createButtonClicked(sender: AnyObject) {
+        let createPaymentViewController = CreatePaymentViewController(groupid: group.id)
+        navigationController?.pushViewController(createPaymentViewController, animated: true)
     }
 
 }

@@ -10,10 +10,12 @@ import Foundation
 
 class Participant {
 
+    let id: String? // id's are only used when adding new entry
     let name: String
     let amount: Int
 
-    init(name: String, amount: Int) {
+    init(id: String?, name: String, amount: Int) {
+        self.id = id
         self.name = name
         self.amount = amount
     }
@@ -38,7 +40,7 @@ class Payment {
     }
 
     func addParticipant(name: String, amount: Int) {
-        let participant = Participant(name: name, amount: amount)
+        let participant = Participant(id: nil, name: name, amount: amount)
 
         participants.append(participant)
     }
