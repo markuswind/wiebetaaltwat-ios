@@ -265,11 +265,11 @@
 				280833D91D156E050013358A /* NavigationController.swift */,
 				287C04881D15512700F42CF3 /* LoginViewController.swift */,
 				288F6C111D16DB5600E2B875 /* GroupDetailViewController.swift */,
-				2815698D1D15EB6B0028C6CD /* GroupOverviewController.swift */,
+				28044FAF1D1AD3240039D2F3 /* GroupLiquidateViewController.swift */,
 				28044FAB1D1AC69C0039D2F3 /* GroupMembersViewController.swift */,
+				2815698D1D15EB6B0028C6CD /* GroupOverviewController.swift */,
 				28044FA91D1A9C510039D2F3 /* GroupSegmentedViewController.swift */,
 				2805EAAB1D169B0600C830C9 /* TabBarController.swift */,
-				28044FAF1D1AD3240039D2F3 /* GroupLiquidateViewController.swift */,
 				287472C61D1AE3220081B342 /* SettingsViewController.swift */,
 			);
 			path = viewcontrollers;
