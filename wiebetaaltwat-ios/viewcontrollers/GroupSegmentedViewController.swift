@@ -28,7 +28,8 @@ class GroupSegmentedViewController: UIViewController {
     override func viewDidLoad() {
         view.backgroundColor = UIColor(colorCode: "F4F4F4")
         navigationItem.title = group.name
-
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        
         setupSegmentedControlAndContainerView()
 
         // setup inital viewcontroller
@@ -39,6 +40,7 @@ class GroupSegmentedViewController: UIViewController {
         currentViewController = initialViewController
 
         addChildViewController(initialViewController)
+        setupRightBarButtonItemForSegmentedIndex(0)
 
         // load all group data
         group.scrapeAllGroupData {
@@ -50,11 +52,11 @@ class GroupSegmentedViewController: UIViewController {
 
     private func setupSegmentedControlAndContainerView() {
         // setup segmentedcontrol
-        let segmentedBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: SETTINGS.screenWidth, height: 60))
+        let segmentedBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: SETTINGS.screenWidth, height: 50))
         segmentedBackgroundView.backgroundColor = UIColor(colorCode: "FF8000")
 
         segmentedControl = UISegmentedControl(items: ["Overzicht", "Deelnemers", "Afrekenen"])
-        segmentedControl.frame = CGRect(x: 15, y: 15, width: SETTINGS.screenWidth - 30, height: 30)
+        segmentedControl.frame = CGRect(x: 15, y: 5, width: SETTINGS.screenWidth - 30, height: 30)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(GroupSegmentedViewController.segmentChanged(_:)), forControlEvents: .ValueChanged)
         segmentedControl.tintColor = UIColor(colorCode: "E86E0F")
@@ -79,6 +81,7 @@ class GroupSegmentedViewController: UIViewController {
         viewController.view.alpha = 0.0
 
         addChildViewController(viewController)
+        setupRightBarButtonItemForSegmentedIndex(sender.selectedSegmentIndex)
 
         self.transitionFromViewController(currentViewController, toViewController: viewController, duration: 0.3, options: .TransitionNone, animations: {
             self.currentViewController.view.alpha = 0.0
@@ -111,6 +114,42 @@ class GroupSegmentedViewController: UIViewController {
         }
 
         return viewController
+    }
+
+    private func setupRightBarButtonItemForSegmentedIndex(index: Int) {
+        switch index {
+        case 0:
+            let barButtonImage = UIImage(named: "baricon-add-list-filled")?.imageWithRenderingMode(.AlwaysTemplate)
+            let barButtonItem = UIBarButtonItem(image: barButtonImage, style: .Plain, target: self, action: #selector(self.createNewPaymentButtonClicked(_:)))
+
+            navigationItem.setRightBarButtonItem(barButtonItem, animated: true)
+
+            break
+        case 1:
+            let barButtonImage = UIImage(named: "baricon-add-user-filled")?.imageWithRenderingMode(.AlwaysTemplate)
+            let barButtonItem = UIBarButtonItem(image: barButtonImage, style: .Plain, target: self, action: #selector(self.createNewMemberButtonClicked(_:)))
+
+            navigationItem.setRightBarButtonItem(barButtonItem, animated: true)
+
+            break
+        default:
+            navigationItem.setRightBarButtonItem(nil, animated: true)
+
+            break
+        }
+    }
+
+    func createNewPaymentButtonClicked(sender: AnyObject) {
+        let createPaymentViewController = CreatePaymentViewController(groupid: group.id)
+
+        navigationController?.pushViewController(createPaymentViewController, animated: true)
+    }
+
+    // TODO: - create the actual viewcontroller
+    func createNewMemberButtonClicked(sender: AnyObject) {
+        let createMemberViewController = CreatePaymentViewController(groupid: group.id)
+
+        navigationController?.pushViewController(createMemberViewController, animated: true)
     }
 
 }

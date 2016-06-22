@@ -24,7 +24,7 @@ class LiquidationScraper: BaseScraper {
                 if let doc = Kanna.HTML(html: html!, encoding: NSUTF8StringEncoding) {
                     if let table = doc.at_xpath("//*[@id=\"content-view\"]/div[1]/table/tbody") {
                         for(_, tr) in table.css("tr").enumerate() {
-                            print(tr.text)
+
                         }
                     }
                 }

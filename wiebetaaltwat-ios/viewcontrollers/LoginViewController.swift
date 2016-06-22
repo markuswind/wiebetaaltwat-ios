@@ -35,10 +35,6 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
         navigationController?.navigationBar.barTintColor = UIColor(colorCode: "6d3212")
         navigationController?.navigationBar.barStyle = .Black
 
-        if let navigationController = navigationController as? NavigationController {
-            navigationController.statusBarBackground.backgroundColor = UIColor(colorCode: "6d3212")
-        }
-
         addLogoHeaderView()
         addLoginBoxView()
         addFooter()

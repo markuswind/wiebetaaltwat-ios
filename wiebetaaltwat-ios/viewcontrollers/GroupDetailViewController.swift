@@ -24,9 +24,6 @@ class GroupDetailViewController: UITableViewController {
     override func viewDidLoad() {
         // setup styling
         tableView.backgroundColor = UIColor(colorCode: "F4F4F4")
-        navigationItem.title = group.name
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Plain, target: self, action: #selector(self.createButtonClicked(_:)))
 
         // setup tableview
         tableView.registerClass(GroupTableViewCell.self, forCellReuseIdentifier: "PaymentTableViewCell")
