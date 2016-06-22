@@ -41,7 +41,7 @@ class GroupSegmentedViewController: UIViewController {
         addChildViewController(initialViewController)
 
         // load all group data
-        group.getGroupOverview {
+        group.scrapeAllGroupData {
             if let currentViewController = self.currentViewController as? UITableViewController {
                 currentViewController.tableView.reloadData()
             }
@@ -51,12 +51,17 @@ class GroupSegmentedViewController: UIViewController {
     private func setupSegmentedControlAndContainerView() {
         // setup segmentedcontrol
         let segmentedBackgroundView = UIView(frame: CGRect(x: 0, y: 0, width: SETTINGS.screenWidth, height: 60))
-        segmentedBackgroundView.backgroundColor = UIColor.whiteColor()
+        segmentedBackgroundView.backgroundColor = UIColor(colorCode: "FF8000")
 
         segmentedControl = UISegmentedControl(items: ["Overzicht", "Deelnemers", "Afrekenen"])
         segmentedControl.frame = CGRect(x: 15, y: 15, width: SETTINGS.screenWidth - 30, height: 30)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(GroupSegmentedViewController.segmentChanged(_:)), forControlEvents: .ValueChanged)
+        segmentedControl.tintColor = UIColor(colorCode: "E86E0F")
+
+        let titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, forState: .Selected)
+        UISegmentedControl.appearance().setTitleTextAttributes(titleTextAttributes, forState: .Normal)
 
         // setup containerview
         let containerHeight = view.frame.height - 20 - (tabBarController?.tabBar.frame.height)! - ((navigationController?.navigationBar.frame.height)! + segmentedBackgroundView.frame.height)
@@ -99,7 +104,7 @@ class GroupSegmentedViewController: UIViewController {
             viewController = GroupMemberViewController(group: group)
             break
         case 2:
-            viewController = GroupDetailViewController(group: group)
+            viewController = GroupLiquidateViewController(group: group)
             break
         default:
             break

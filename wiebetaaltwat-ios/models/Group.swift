@@ -21,6 +21,7 @@ class BalanceUser {
 class Group {
 
     let groupScraper = GroupScraper()
+    let liquidationScraper = LiquidationScraper()
     let id: String!
     let name: String!
 
@@ -32,15 +33,17 @@ class Group {
 
     var payments: [Payment]!
     var balanceUsers: [BalanceUser]!
+    var liquidations: [Liquidation]!
 
     init(id: String, name: String) {
         self.id = id
         self.name = name
         self.payments = []
         self.balanceUsers = []
+        self.liquidations = []
     }
 
-    func getGroupOverview(completion: () -> ()) {
+    func scrapeAllGroupData(completion: () -> ()) {
         groupScraper.getGroupOverview(id) { balanceUsers, payments in
             self.balanceUsers = []
             self.balanceUsers = balanceUsers
@@ -48,12 +51,14 @@ class Group {
             self.payments = []
             self.payments = payments
 
-            completion()
+            // and we also scrape the liquidations
+            self.liquidationScraper.getLiquidations(self.id) { liquidations in
+                self.liquidations = []
+                self.liquidations = liquidations
+
+                completion()
+            }
         }
-    }
-
-    func getBalanceUsers(completion: () -> ()) {
-
     }
 
 }
