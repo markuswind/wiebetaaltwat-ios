@@ -28,8 +28,8 @@ class GroupLiquidateViewController: UITableViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
 
         // setup tableview
-        tableView.registerClass(GroupMemberTableViewCell.self, forCellReuseIdentifier: "groupMemberTableViewCell")
-        tableView.rowHeight = 60 // TODO:: should be dynamic
+        tableView.registerClass(GroupMemberTableViewCell.self, forCellReuseIdentifier: "groupLiquidationTableViewCell")
+        tableView.rowHeight = 80 // TODO:: should be dynamic
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,9 +39,12 @@ class GroupLiquidateViewController: UITableViewController {
 
         return 0
     }
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        return UITableViewCell()
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let liquidation = group.liquidations[indexPath.row]
+        let cell = GroupLiquidationTableViewCell(liquidation: liquidation, style: .Default, reuseIdentifier: "groupLiquidationTableViewCell")
+
+        return cell
     }
 
 }

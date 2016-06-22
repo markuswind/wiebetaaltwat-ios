@@ -55,6 +55,7 @@
 		287C04A41D15635B00F42CF3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C04A31D15635B00F42CF3 /* Settings.swift */; };
 		287C04A71D15637200F42CF3 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C04A51D15637200F42CF3 /* BoxView.swift */; };
 		287C04A81D15637200F42CF3 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C04A61D15637200F42CF3 /* View.swift */; };
+		287FAACE1D1B065B00359BFE /* GroupLiquidationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287FAACD1D1B065B00359BFE /* GroupLiquidationTableViewCell.swift */; };
 		288F6C121D16DB5600E2B875 /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288F6C111D16DB5600E2B875 /* GroupDetailViewController.swift */; };
 		288F6C141D16DC5200E2B875 /* PaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288F6C131D16DC5200E2B875 /* PaymentTableViewCell.swift */; };
 		288F6C161D16DC8D00E2B875 /* wiebetaaltwat-footer.png in Resources */ = {isa = PBXBuildFile; fileRef = 288F6C151D16DC8D00E2B875 /* wiebetaaltwat-footer.png */; };
@@ -124,6 +125,7 @@
 		287C04A31D15635B00F42CF3 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		287C04A51D15637200F42CF3 /* BoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
 		287C04A61D15637200F42CF3 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		287FAACD1D1B065B00359BFE /* GroupLiquidationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupLiquidationTableViewCell.swift; path = tableviewcells/GroupLiquidationTableViewCell.swift; sourceTree = "<group>"; };
 		288F6C111D16DB5600E2B875 /* GroupDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
 		288F6C131D16DC5200E2B875 /* PaymentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentTableViewCell.swift; path = tableviewcells/PaymentTableViewCell.swift; sourceTree = "<group>"; };
 		288F6C151D16DC8D00E2B875 /* wiebetaaltwat-footer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wiebetaaltwat-footer.png"; path = "images/wiebetaaltwat-footer.png"; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				28044FAD1D1AC7AA0039D2F3 /* GroupMemberTableViewCell.swift */,
 				281569911D15EC6B0028C6CD /* GroupTableViewCell.swift */,
 				288F6C131D16DC5200E2B875 /* PaymentTableViewCell.swift */,
+				287FAACD1D1B065B00359BFE /* GroupLiquidationTableViewCell.swift */,
 			);
 			name = tableviewcells;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				280833F21D1594300013358A /* UserScraper.swift in Sources */,
 				281569921D15EC6B0028C6CD /* GroupTableViewCell.swift in Sources */,
 				2805EAAC1D169B0600C830C9 /* TabBarController.swift in Sources */,
+				287FAACE1D1B065B00359BFE /* GroupLiquidationTableViewCell.swift in Sources */,
 				280833F41D15A4020013358A /* Client.swift in Sources */,
 				288F6C141D16DC5200E2B875 /* PaymentTableViewCell.swift in Sources */,
 				287C04A81D15637200F42CF3 /* View.swift in Sources */,
