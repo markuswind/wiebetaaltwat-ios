@@ -39,6 +39,13 @@ class GroupSegmentedViewController: UIViewController {
         currentViewController = initialViewController
 
         addChildViewController(initialViewController)
+
+        // load all group data
+        group.getGroupOverview {
+            if let currentViewController = self.currentViewController as? UITableViewController {
+                currentViewController.tableView.reloadData()
+            }
+        }
     }
 
     private func setupSegmentedControlAndContainerView() {
@@ -89,7 +96,7 @@ class GroupSegmentedViewController: UIViewController {
             viewController = GroupDetailViewController(group: group)
             break
         case 1:
-            viewController = GroupDetailViewController(group: group)
+            viewController = GroupMemberViewController(group: group)
             break
         case 2:
             viewController = GroupDetailViewController(group: group)

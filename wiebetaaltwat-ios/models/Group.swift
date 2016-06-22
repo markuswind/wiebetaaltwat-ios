@@ -53,7 +53,7 @@ class Group {
     }
 
     func getBalanceUsers(completion: () -> ()) {
-        
+
     }
 
 }
