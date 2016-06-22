@@ -168,9 +168,9 @@
 		281569901D15EC380028C6CD /* tableviewcells */ = {
 			isa = PBXGroup;
 			children = (
+				28044FAD1D1AC7AA0039D2F3 /* GroupMemberTableViewCell.swift */,
 				281569911D15EC6B0028C6CD /* GroupTableViewCell.swift */,
 				288F6C131D16DC5200E2B875 /* PaymentTableViewCell.swift */,
-				28044FAD1D1AC7AA0039D2F3 /* GroupMemberTableViewCell.swift */,
 			);
 			name = tableviewcells;
 			sourceTree = "<group>";
@@ -239,9 +239,9 @@
 			children = (
 				284838551D19999F002CA1D3 /* BaseScraper.swift */,
 				284838571D199A0C002CA1D3 /* GroupScraper.swift */,
+				287472C41D1ADD270081B342 /* LiquidationScraper.swift */,
 				284838591D199A69002CA1D3 /* PaymentScraper.swift */,
 				280833F11D1594300013358A /* UserScraper.swift */,
-				287472C41D1ADD270081B342 /* LiquidationScraper.swift */,
 			);
 			path = scrapers;
 			sourceTree = "<group>";
@@ -250,10 +250,10 @@
 			isa = PBXGroup;
 			children = (
 				280833F31D15A4020013358A /* Client.swift */,
-				280833EF1D158BBC0013358A /* User.swift */,
 				281569851D15C7370028C6CD /* Group.swift */,
-				2805EAAD1D169FCE00C830C9 /* Payment.swift */,
 				28044FB11D1AD4460039D2F3 /* Liquidation.swift */,
+				2805EAAD1D169FCE00C830C9 /* Payment.swift */,
+				280833EF1D158BBC0013358A /* User.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
