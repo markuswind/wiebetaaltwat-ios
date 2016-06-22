@@ -13,7 +13,9 @@ class TabBarController: RAMAnimatedTabBarController {
 
     override func viewDidLoad() {
         var viewControllers: [UIViewController] = []
-        viewControllers.append(createGroupNavigatioNController())
+        viewControllers.append(createGroupNavigationController())
+        viewControllers.append(createUserNavigationController())
+        viewControllers.append(createSettingsNavigationController())
 
         setViewControllers(viewControllers, animated: false)
 
@@ -22,12 +24,28 @@ class TabBarController: RAMAnimatedTabBarController {
         tabBar.tintColor = UIColor.orangeColor()
     }
 
-    private func createGroupNavigatioNController() -> NavigationController {
+    private func createGroupNavigationController() -> NavigationController {
         let groupOverViewController = GroupOverViewController()
         let groupNavigationController = NavigationController(rootViewController: groupOverViewController)
-        groupOverViewController.tabBarItem = createTabBarItem("Group", imagename: "tabicon-group")
+        groupOverViewController.tabBarItem = createTabBarItem("Lists", imagename: "tabicon-groups")
 
         return groupNavigationController
+    }
+
+    private func createUserNavigationController() -> NavigationController {
+        let userViewController = SettingsViewController()
+        let userNavigationController = NavigationController(rootViewController: userViewController)
+        userViewController.tabBarItem = createTabBarItem("User", imagename: "tabicon-user")
+
+        return userNavigationController
+    }
+
+    private func createSettingsNavigationController() -> NavigationController {
+        let settingsViewController = SettingsViewController()
+        let settingsNavigationController = NavigationController(rootViewController: settingsViewController)
+        settingsNavigationController.tabBarItem = createTabBarItem("Settings", imagename: "tabicon-settings")
+
+        return settingsNavigationController
     }
 
     private func createTabBarItem(title: String, imagename: String) -> RAMAnimatedTabBarItem {

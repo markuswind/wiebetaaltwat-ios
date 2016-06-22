@@ -46,6 +46,7 @@
 		285A793D1D17F55800F3689D /* CalculatorKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285A793C1D17F55800F3689D /* CalculatorKeyboard.framework */; };
 		285A793E1D17F55800F3689D /* CalculatorKeyboard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 285A793C1D17F55800F3689D /* CalculatorKeyboard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		287472C51D1ADD270081B342 /* LiquidationScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287472C41D1ADD270081B342 /* LiquidationScraper.swift */; };
+		287472C71D1AE3220081B342 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287472C61D1AE3220081B342 /* SettingsViewController.swift */; };
 		287C04891D15512700F42CF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C04881D15512700F42CF3 /* LoginViewController.swift */; };
 		287C048E1D15512700F42CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 287C048D1D15512700F42CF3 /* Assets.xcassets */; };
 		287C04911D15512700F42CF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287C048F1D15512700F42CF3 /* LaunchScreen.storyboard */; };
@@ -112,6 +113,7 @@
 		285A793A1D17F27A00F3689D /* CreatePaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePaymentViewController.swift; sourceTree = "<group>"; };
 		285A793C1D17F55800F3689D /* CalculatorKeyboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalculatorKeyboard.framework; path = Carthage/Build/iOS/CalculatorKeyboard.framework; sourceTree = "<group>"; };
 		287472C41D1ADD270081B342 /* LiquidationScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidationScraper.swift; sourceTree = "<group>"; };
+		287472C61D1AE3220081B342 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		287C04831D15512700F42CF3 /* wiebetaaltwat-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wiebetaaltwat-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		287C04881D15512700F42CF3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		287C048D1D15512700F42CF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "wiebetaaltwat-ios/Assets.xcassets"; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				28044FA91D1A9C510039D2F3 /* GroupSegmentedViewController.swift */,
 				2805EAAB1D169B0600C830C9 /* TabBarController.swift */,
 				28044FAF1D1AD3240039D2F3 /* GroupLiquidateViewController.swift */,
+				287472C61D1AE3220081B342 /* SettingsViewController.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 			files = (
 				280833DA1D156E050013358A /* NavigationController.swift in Sources */,
 				287C04A11D15634A00F42CF3 /* UIColor+HexCode.swift in Sources */,
+				287472C71D1AE3220081B342 /* SettingsViewController.swift in Sources */,
 				284838581D199A0C002CA1D3 /* GroupScraper.swift in Sources */,
 				287C04A21D15634A00F42CF3 /* UIImage+GrayScale.swift in Sources */,
 				281569861D15C7370028C6CD /* Group.swift in Sources */,
