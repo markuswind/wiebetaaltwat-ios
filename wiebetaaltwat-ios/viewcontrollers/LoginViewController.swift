@@ -30,6 +30,11 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
         view.backgroundColor = UIColor(colorCode: "F4F4F4")
         navigationItem.title = "Login"
 
+        // colors only used at login screen
+        navigationController?.navigationBar.tintColor = UIColor(colorCode: "FFFFFF")
+        navigationController?.navigationBar.barTintColor = UIColor(colorCode: "6d3212")
+        navigationController?.navigationBar.barStyle = .Black
+
         addLogoHeaderView()
         addLoginBoxView()
         addFooter()
@@ -40,9 +45,7 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
     }
 
     private func addLogoHeaderView() {
-        let yPosition = navigationController?.navigationBar.bounds.maxY
-
-        logoHeaderView = LogoHeaderView(frame: CGRect(x: 0, y: yPosition! - 15, width: SETTINGS.screenWidth, height: SETTINGS.screenHeight / 3))
+        logoHeaderView = LogoHeaderView(frame: CGRect(x: 0, y: -1, width: SETTINGS.screenWidth, height: SETTINGS.screenHeight / 3 - 49))
         logoHeaderView.backgroundColor = UIColor(colorCode: "FFFFFF")
 
         view.addSubview(logoHeaderView)
@@ -61,14 +64,14 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
     }
 
     private func addFooter() {
-        let footerMargin: CGFloat = 60
+        let footerMargin: CGFloat = 20
         let footerHeight = SETTINGS.screenHeight - (boxView.frame.maxY) - footerMargin
 
         let footerImageView = UIImageView(frame: CGRect(x: 0, y: SETTINGS.screenHeight - footerHeight, width: SETTINGS.screenWidth, height: footerHeight))
         footerImageView.image = UIImage(named: "wiebetaaltwat-footer.png")!.imageWithRenderingMode(.AlwaysTemplate)
         footerImageView.tintColor = UIColor(colorCode: "C2C5CA")
         footerImageView.alpha = 0.6
-        footerImageView.contentMode = .ScaleAspectFill
+        footerImageView.contentMode = .ScaleAspectFit
 
         view.addSubview(footerImageView)
     }

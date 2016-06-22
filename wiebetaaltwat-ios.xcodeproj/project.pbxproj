@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28044FAA1D1A9C510039D2F3 /* GroupSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28044FA91D1A9C510039D2F3 /* GroupSegmentedViewController.swift */; };
 		2805EAAC1D169B0600C830C9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2805EAAB1D169B0600C830C9 /* TabBarController.swift */; };
 		2805EAAE1D169FCE00C830C9 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2805EAAD1D169FCE00C830C9 /* Payment.swift */; };
 		280833C21D15642A0013358A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280833C11D15642A0013358A /* AppDelegate.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		28044FA91D1A9C510039D2F3 /* GroupSegmentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSegmentedViewController.swift; sourceTree = "<group>"; };
 		2805EAAB1D169B0600C830C9 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		2805EAAD1D169FCE00C830C9 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		280833C11D15642A0013358A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				287C04881D15512700F42CF3 /* LoginViewController.swift */,
 				288F6C111D16DB5600E2B875 /* GroupDetailViewController.swift */,
 				2815698D1D15EB6B0028C6CD /* GroupOverviewController.swift */,
+				28044FA91D1A9C510039D2F3 /* GroupSegmentedViewController.swift */,
 				2805EAAB1D169B0600C830C9 /* TabBarController.swift */,
 			);
 			path = viewcontrollers;
@@ -356,6 +359,7 @@
 				287C04A21D15634A00F42CF3 /* UIImage+GrayScale.swift in Sources */,
 				281569861D15C7370028C6CD /* Group.swift in Sources */,
 				287C04A71D15637200F42CF3 /* BoxView.swift in Sources */,
+				28044FAA1D1A9C510039D2F3 /* GroupSegmentedViewController.swift in Sources */,
 				287C04891D15512700F42CF3 /* LoginViewController.swift in Sources */,
 				280833D41D1569AB0013358A /* LogoHeaderView.swift in Sources */,
 				280833C21D15642A0013358A /* AppDelegate.swift in Sources */,

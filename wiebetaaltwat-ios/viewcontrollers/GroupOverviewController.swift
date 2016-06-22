@@ -48,9 +48,9 @@ class GroupOverViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let group = groups[indexPath.item]
-        let groupDetailViewController = GroupDetailViewController(group: group)
+        let groupSegmentedViewController = GroupSegmentedViewController(group: group)
 
-        navigationController?.pushViewController(groupDetailViewController, animated: true)
+        navigationController?.pushViewController(groupSegmentedViewController, animated: true)
     }
 
 }

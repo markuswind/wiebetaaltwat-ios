@@ -12,9 +12,13 @@ import UIKit
 class NavigationController: UINavigationController {
 
     override func viewDidLoad() {
-        navigationBar.tintColor = UIColor(colorCode: "FFFFFF")
-        navigationBar.barTintColor = UIColor(colorCode: "6d3212")
-        navigationBar.barStyle = .Black
+        navigationBar.translucent = false
+        navigationBar.shadowImage = UIImage();
+        navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+
+        navigationBar.tintColor = UIColor(colorCode: "222222")
+        navigationBar.barTintColor = UIColor.whiteColor()
+        navigationBar.barStyle = .Default
     }
     
 }

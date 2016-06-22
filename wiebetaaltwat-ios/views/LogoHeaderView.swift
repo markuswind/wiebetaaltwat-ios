@@ -19,9 +19,9 @@ class LogoHeaderView: View {
         layer.borderWidth = 1.0
 
         // create logo
-        let aspectwidth = frame.height * 0.6
+        let aspectwidth = frame.height * 0.75
 
-        let logoImageView = UIImageView(frame: CGRect(x: frame.midX - (aspectwidth / 2), y: frame.midY - 10 - (aspectwidth / 2), width: aspectwidth, height: aspectwidth))
+        let logoImageView = UIImageView(frame: CGRect(x: frame.midX - (aspectwidth / 2), y: frame.midY - (aspectwidth / 2), width: aspectwidth, height: aspectwidth))
         logoImageView.image = UIImage(named: "wiebetaaltwat-logo.png")
         logoImageView.contentMode = .ScaleAspectFit
 
