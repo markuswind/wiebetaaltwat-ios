@@ -39,6 +39,13 @@
 		2815698C1D15E3030028C6CD /* String+Replace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815698B1D15E3030028C6CD /* String+Replace.swift */; };
 		2815698E1D15EB6B0028C6CD /* GroupOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815698D1D15EB6B0028C6CD /* GroupOverviewController.swift */; };
 		281569921D15EC6B0028C6CD /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281569911D15EC6B0028C6CD /* GroupTableViewCell.swift */; };
+		284493891D1C03390004E535 /* UIImageView+Letters.m in Sources */ = {isa = PBXBuildFile; fileRef = 284493881D1C03390004E535 /* UIImageView+Letters.m */; };
+		2844938C1D1C06900004E535 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844938B1D1C06900004E535 /* UserViewController.swift */; };
+		284493901D1C0F290004E535 /* String+AlphabetColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844938F1D1C0F290004E535 /* String+AlphabetColor.swift */; };
+		284493921D1C26FF0004E535 /* euro-filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 284493911D1C26FF0004E535 /* euro-filled.png */; };
+		284493941D1C2A6B0004E535 /* euro.png in Resources */ = {isa = PBXBuildFile; fileRef = 284493931D1C2A6B0004E535 /* euro.png */; };
+		284493961D1C2B9C0004E535 /* circled-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 284493951D1C2B9C0004E535 /* circled-up.png */; };
+		284493981D1C32770004E535 /* NamedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284493971D1C32770004E535 /* NamedTextField.swift */; };
 		284838561D19999F002CA1D3 /* BaseScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284838551D19999F002CA1D3 /* BaseScraper.swift */; };
 		284838581D199A0C002CA1D3 /* GroupScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284838571D199A0C002CA1D3 /* GroupScraper.swift */; };
 		2848385A1D199A69002CA1D3 /* PaymentScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284838591D199A69002CA1D3 /* PaymentScraper.swift */; };
@@ -108,6 +115,15 @@
 		2815698B1D15E3030028C6CD /* String+Replace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Replace.swift"; sourceTree = "<group>"; };
 		2815698D1D15EB6B0028C6CD /* GroupOverviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupOverviewController.swift; sourceTree = "<group>"; };
 		281569911D15EC6B0028C6CD /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupTableViewCell.swift; path = tableviewcells/GroupTableViewCell.swift; sourceTree = "<group>"; };
+		284493871D1C03390004E535 /* UIImageView+Letters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+Letters.h"; path = "third party code/UIImageView+Letters.h"; sourceTree = "<group>"; };
+		284493881D1C03390004E535 /* UIImageView+Letters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+Letters.m"; path = "third party code/UIImageView+Letters.m"; sourceTree = "<group>"; };
+		2844938A1D1C04360004E535 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		2844938B1D1C06900004E535 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		2844938F1D1C0F290004E535 /* String+AlphabetColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+AlphabetColor.swift"; sourceTree = "<group>"; };
+		284493911D1C26FF0004E535 /* euro-filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "euro-filled.png"; sourceTree = "<group>"; };
+		284493931D1C2A6B0004E535 /* euro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = euro.png; sourceTree = "<group>"; };
+		284493951D1C2B9C0004E535 /* circled-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circled-up.png"; sourceTree = "<group>"; };
+		284493971D1C32770004E535 /* NamedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedTextField.swift; sourceTree = "<group>"; };
 		284838551D19999F002CA1D3 /* BaseScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseScraper.swift; sourceTree = "<group>"; };
 		284838571D199A0C002CA1D3 /* GroupScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupScraper.swift; sourceTree = "<group>"; };
 		284838591D199A69002CA1D3 /* PaymentScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentScraper.swift; sourceTree = "<group>"; };
@@ -162,6 +178,9 @@
 			isa = PBXGroup;
 			children = (
 				280833E51D1580120013358A /* account.png */,
+				284493951D1C2B9C0004E535 /* circled-up.png */,
+				284493931D1C2A6B0004E535 /* euro.png */,
+				284493911D1C26FF0004E535 /* euro-filled.png */,
 				280833E61D1580120013358A /* lock.png */,
 			);
 			name = icons;
@@ -176,6 +195,15 @@
 				287FAACD1D1B065B00359BFE /* GroupLiquidationTableViewCell.swift */,
 			);
 			name = tableviewcells;
+			sourceTree = "<group>";
+		};
+		284493851D1C03210004E535 /* third party code */ = {
+			isa = PBXGroup;
+			children = (
+				284493871D1C03390004E535 /* UIImageView+Letters.h */,
+				284493881D1C03390004E535 /* UIImageView+Letters.m */,
+			);
+			name = "third party code";
 			sourceTree = "<group>";
 		};
 		287C047A1D15512700F42CF3 = {
@@ -211,6 +239,7 @@
 				287C049A1D15628B00F42CF3 /* scrapers */,
 				287C049D1D1562A400F42CF3 /* supporting files */,
 				281569901D15EC380028C6CD /* tableviewcells */,
+				284493851D1C03210004E535 /* third party code */,
 				287C049C1D15629C00F42CF3 /* viewcontrollers */,
 				287C049E1D1562B200F42CF3 /* views */,
 				280833C11D15642A0013358A /* AppDelegate.swift */,
@@ -225,6 +254,7 @@
 				287C049F1D15634A00F42CF3 /* UIColor+HexCode.swift */,
 				287C04A01D15634A00F42CF3 /* UIImage+GrayScale.swift */,
 				2815698B1D15E3030028C6CD /* String+Replace.swift */,
+				2844938F1D1C0F290004E535 /* String+AlphabetColor.swift */,
 			);
 			path = categories;
 			sourceTree = "<group>";
@@ -274,6 +304,7 @@
 				28044FA91D1A9C510039D2F3 /* GroupSegmentedViewController.swift */,
 				2805EAAB1D169B0600C830C9 /* TabBarController.swift */,
 				287472C61D1AE3220081B342 /* SettingsViewController.swift */,
+				2844938B1D1C06900004E535 /* UserViewController.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -281,6 +312,7 @@
 		287C049D1D1562A400F42CF3 /* supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				2844938A1D1C04360004E535 /* BridgingHeader.h */,
 				287C04921D15512700F42CF3 /* Info.plist */,
 			);
 			path = "supporting files";
@@ -289,6 +321,7 @@
 		287C049E1D1562B200F42CF3 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				284493971D1C32770004E535 /* NamedTextField.swift */,
 				280833D71D156A470013358A /* LabeledTextField.swift */,
 				280833D51D1569EE0013358A /* LoginBoxView.swift */,
 				280833D31D1569AB0013358A /* LogoHeaderView.swift */,
@@ -359,10 +392,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				280833DD1D15746D0013358A /* wiebetaaltwat-logo.png in Resources */,
+				284493961D1C2B9C0004E535 /* circled-up.png in Resources */,
+				284493921D1C26FF0004E535 /* euro-filled.png in Resources */,
 				280833E81D1580120013358A /* lock.png in Resources */,
 				287C04911D15512700F42CF3 /* LaunchScreen.storyboard in Resources */,
 				287C048E1D15512700F42CF3 /* Assets.xcassets in Resources */,
 				280833E71D1580120013358A /* account.png in Resources */,
+				284493941D1C2A6B0004E535 /* euro.png in Resources */,
 				288F6C161D16DC8D00E2B875 /* wiebetaaltwat-footer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				280833DA1D156E050013358A /* NavigationController.swift in Sources */,
+				2844938C1D1C06900004E535 /* UserViewController.swift in Sources */,
 				287C04A11D15634A00F42CF3 /* UIColor+HexCode.swift in Sources */,
 				287472C71D1AE3220081B342 /* SettingsViewController.swift in Sources */,
 				284838581D199A0C002CA1D3 /* GroupScraper.swift in Sources */,
@@ -384,6 +421,7 @@
 				287472C51D1ADD270081B342 /* LiquidationScraper.swift in Sources */,
 				28044FAA1D1A9C510039D2F3 /* GroupSegmentedViewController.swift in Sources */,
 				287C04891D15512700F42CF3 /* LoginViewController.swift in Sources */,
+				284493981D1C32770004E535 /* NamedTextField.swift in Sources */,
 				28044FAC1D1AC69C0039D2F3 /* GroupMembersViewController.swift in Sources */,
 				280833D41D1569AB0013358A /* LogoHeaderView.swift in Sources */,
 				280833C21D15642A0013358A /* AppDelegate.swift in Sources */,
@@ -395,12 +433,14 @@
 				280833F41D15A4020013358A /* Client.swift in Sources */,
 				288F6C141D16DC5200E2B875 /* PaymentTableViewCell.swift in Sources */,
 				287C04A81D15637200F42CF3 /* View.swift in Sources */,
+				284493901D1C0F290004E535 /* String+AlphabetColor.swift in Sources */,
 				28044FAE1D1AC7AA0039D2F3 /* GroupMemberTableViewCell.swift in Sources */,
 				28044FB01D1AD3240039D2F3 /* GroupLiquidateViewController.swift in Sources */,
 				280833F01D158BBC0013358A /* User.swift in Sources */,
 				2805EAAE1D169FCE00C830C9 /* Payment.swift in Sources */,
 				288F6C121D16DB5600E2B875 /* GroupDetailViewController.swift in Sources */,
 				285A793B1D17F27A00F3689D /* CreatePaymentViewController.swift in Sources */,
+				284493891D1C03390004E535 /* UIImageView+Letters.m in Sources */,
 				28044FB21D1AD4460039D2F3 /* Liquidation.swift in Sources */,
 				2815698C1D15E3030028C6CD /* String+Replace.swift in Sources */,
 				2848385A1D199A69002CA1D3 /* PaymentScraper.swift in Sources */,
@@ -513,6 +553,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -523,6 +564,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wind.wiebetaaltwat-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "wiebetaaltwat-ios/supporting files/BridgingHeader.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -530,6 +573,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -540,6 +584,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wind.wiebetaaltwat-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "wiebetaaltwat-ios/supporting files/BridgingHeader.h";
 			};
 			name = Release;
 		};
