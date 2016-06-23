@@ -33,7 +33,7 @@ class TabBarController: RAMAnimatedTabBarController {
     }
 
     private func createUserNavigationController() -> NavigationController {
-        let userViewController = SettingsViewController()
+        let userViewController = UserViewController()
         let userNavigationController = NavigationController(rootViewController: userViewController)
         userViewController.tabBarItem = createTabBarItem("Me", imagename: "tabicon-user")
 

@@ -132,6 +132,12 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
             }
         }
 
+        if let navigationController = tabBarController.viewControllers![1] as? NavigationController {
+            if let userViewController = navigationController.viewControllers[0] as? UserViewController {
+                userViewController.user = self.user!
+            }
+        }
+
         presentViewController(tabBarController, animated: true, completion: nil)
     }
 

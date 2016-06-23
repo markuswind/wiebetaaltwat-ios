@@ -33,7 +33,7 @@ class GroupMemberTableViewCell: UITableViewCell {
 
     private func createAvaterImage() {
         avaterImageView = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
-        avaterImageView.setImageWithString(member.name, color: nil, circular: true)
+        avaterImageView.setImageWithString(member.name, color: member.name.alphaBetColor(), circular: true)
 
         addSubview(avaterImageView)
     }
