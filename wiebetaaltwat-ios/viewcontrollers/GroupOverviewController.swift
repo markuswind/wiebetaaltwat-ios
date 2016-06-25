@@ -16,7 +16,9 @@ class GroupOverViewController: UITableViewController {
 
     override func viewDidLoad() {
         // setup styling
-        tableView.backgroundColor = UIColor(colorCode: "F4F4F4")
+        tableView.backgroundColor = UIColor(colorCode: "F2F2F2")
+        tableView.separatorColor = UIColor.clearColor()
+
         navigationItem.title = "List Overview"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
 
