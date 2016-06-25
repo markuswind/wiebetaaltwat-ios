@@ -33,7 +33,8 @@ class UserViewController: UIViewController {
 
         let avaterSize = view.frame.height / 6
         avatarImageView = UIImageView(frame: CGRect(x: view.frame.midX - avaterSize / 2, y: 25, width: avaterSize, height: avaterSize))
-        avatarImageView.setImageWithString("Markus Wind", color: "Markus Wind".alphaBetColor(), circular: true)
+//        avatarImageView.setImageWithString("Markus Wind", color: "Markus Wind".alphaBetColor(), circular: true)
+        avatarImageView.image = UIImage(named: "profile-male-logo.png")
 
         nameLabel = UILabel(frame: CGRect(x: 0, y: avatarImageView.frame.maxY + 12, width: view.frame.width, height: 20))
         nameLabel.font = UIFont(name: ".SFUIText-Medium", size: 16)!
@@ -66,8 +67,8 @@ class UserViewController: UIViewController {
         let tabBarHeight = tabBarController?.tabBar.frame.size.height
         let inputHeight: CGFloat = (view.frame.height - tabBarHeight! - avatarBoxView.frame.maxY - 14 - 69) / 6
 
-        let inputInfoLabel = UILabel(frame: CGRect(x: 8, y: avatarBoxView.frame.maxY + 10, width: view.frame.width, height: inputHeight))
-        inputInfoLabel.text = "PROFIEL"
+        let inputInfoLabel = UILabel(frame: CGRect(x: 8, y: avatarBoxView.frame.maxY + 10, width: view.frame.width, height: inputHeight / 2))
+        inputInfoLabel.text = "GEGEVENS"
         inputInfoLabel.font = UIFont(name: ".SFUIText-Light", size: 15)
         inputInfoLabel.textColor = UIColor(colorCode: "222222")
 

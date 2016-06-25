@@ -29,10 +29,7 @@ class LoginBoxView: View {
     
     private func createInputs() {
         let emailTextFieldFrame = CGRect(x: 0, y: 0, width: frame.width, height: inputFieldHeight)
-        emailTextField = LabeledTextInput(icon: "account.png", placeholder: "Email", frame: emailTextFieldFrame)
-        emailTextField.textField.keyboardType = .EmailAddress
-        emailTextField.textField.autocorrectionType = .No
-        emailTextField.textField.autocapitalizationType = .None
+        emailTextField = EmailLabeledTextInput(icon: "account.png", placeholder: "Email", frame: emailTextFieldFrame)
         emailTextField.textField.returnKeyType = .Next
 
         let passwordTextFieldFrame = CGRect(x: 0, y: emailTextFieldFrame.maxY - 1, width: frame.width, height: inputFieldHeight)
@@ -60,7 +57,6 @@ class LoginBoxView: View {
     }
 
     func loginButtonClicked(sender: UIButton) {
-        // call delegate
         delegate.loginButtonClicked(sender)
     }
 

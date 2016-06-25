@@ -44,7 +44,7 @@ class NamedTextField: View {
 
     private func addNameAndTextField() {
         // create namelabel
-        let nameLabel = UILabel(frame: CGRect(x: 8, y: 0, width: frame.width * 0.3, height: frame.height))
+        let nameLabel = UILabel(frame: CGRect(x: 8, y: 0, width: frame.width * 0.4, height: frame.height))
         nameLabel.text = name
 
         // create textfield

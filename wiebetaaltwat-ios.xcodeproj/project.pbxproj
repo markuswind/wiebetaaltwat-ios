@@ -29,12 +29,18 @@
 		280833D61D1569EE0013358A /* LoginBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280833D51D1569EE0013358A /* LoginBoxView.swift */; };
 		280833D81D156A470013358A /* LabeledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280833D71D156A470013358A /* LabeledTextField.swift */; };
 		280833DA1D156E050013358A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280833D91D156E050013358A /* NavigationController.swift */; };
-		280833DD1D15746D0013358A /* wiebetaaltwat-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 280833DC1D15746D0013358A /* wiebetaaltwat-logo.png */; };
 		280833E71D1580120013358A /* account.png in Resources */ = {isa = PBXBuildFile; fileRef = 280833E51D1580120013358A /* account.png */; };
 		280833E81D1580120013358A /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 280833E61D1580120013358A /* lock.png */; };
 		280833F01D158BBC0013358A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280833EF1D158BBC0013358A /* User.swift */; };
 		280833F21D1594300013358A /* UserScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280833F11D1594300013358A /* UserScraper.swift */; };
 		280833F41D15A4020013358A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280833F31D15A4020013358A /* Client.swift */; };
+		2814EED41D1E8DDA0069A25C /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2814EED31D1E8DDA0069A25C /* String+Email.swift */; };
+		2814EED61D1EA9A90069A25C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2814EED51D1EA9A90069A25C /* RegisterViewController.swift */; };
+		2814EED81D1EAA7F0069A25C /* RegisterBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2814EED71D1EAA7F0069A25C /* RegisterBoxView.swift */; };
+		2814EEDA1D1EC1E70069A25C /* user-register-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2814EED91D1EC1E70069A25C /* user-register-logo.png */; };
+		2814EEDC1D1EC25C0069A25C /* user-login-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2814EEDB1D1EC25C0069A25C /* user-login-logo.png */; };
+		2814EEDE1D1EC4130069A25C /* profile-female-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2814EEDD1D1EC4130069A25C /* profile-female-logo.png */; };
+		2814EEE01D1EC4190069A25C /* profile-male-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2814EEDF1D1EC4190069A25C /* profile-male-logo.png */; };
 		281569861D15C7370028C6CD /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281569851D15C7370028C6CD /* Group.swift */; };
 		2815698C1D15E3030028C6CD /* String+Replace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815698B1D15E3030028C6CD /* String+Replace.swift */; };
 		2815698E1D15EB6B0028C6CD /* GroupOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815698D1D15EB6B0028C6CD /* GroupOverviewController.swift */; };
@@ -65,7 +71,6 @@
 		287FAACE1D1B065B00359BFE /* GroupLiquidationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287FAACD1D1B065B00359BFE /* GroupLiquidationTableViewCell.swift */; };
 		288F6C121D16DB5600E2B875 /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288F6C111D16DB5600E2B875 /* GroupDetailViewController.swift */; };
 		288F6C141D16DC5200E2B875 /* PaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288F6C131D16DC5200E2B875 /* PaymentTableViewCell.swift */; };
-		288F6C161D16DC8D00E2B875 /* wiebetaaltwat-footer.png in Resources */ = {isa = PBXBuildFile; fileRef = 288F6C151D16DC8D00E2B875 /* wiebetaaltwat-footer.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -105,12 +110,18 @@
 		280833D51D1569EE0013358A /* LoginBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginBoxView.swift; sourceTree = "<group>"; };
 		280833D71D156A470013358A /* LabeledTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabeledTextField.swift; sourceTree = "<group>"; };
 		280833D91D156E050013358A /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		280833DC1D15746D0013358A /* wiebetaaltwat-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wiebetaaltwat-logo.png"; path = "images/wiebetaaltwat-logo.png"; sourceTree = "<group>"; };
 		280833E51D1580120013358A /* account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = account.png; path = images/icons/account.png; sourceTree = "<group>"; };
 		280833E61D1580120013358A /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lock.png; path = images/icons/lock.png; sourceTree = "<group>"; };
 		280833EF1D158BBC0013358A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		280833F11D1594300013358A /* UserScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserScraper.swift; sourceTree = "<group>"; };
 		280833F31D15A4020013358A /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		2814EED31D1E8DDA0069A25C /* String+Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
+		2814EED51D1EA9A90069A25C /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		2814EED71D1EAA7F0069A25C /* RegisterBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterBoxView.swift; sourceTree = "<group>"; };
+		2814EED91D1EC1E70069A25C /* user-register-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-register-logo.png"; sourceTree = "<group>"; };
+		2814EEDB1D1EC25C0069A25C /* user-login-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-login-logo.png"; sourceTree = "<group>"; };
+		2814EEDD1D1EC4130069A25C /* profile-female-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-female-logo.png"; sourceTree = "<group>"; };
+		2814EEDF1D1EC4190069A25C /* profile-male-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-male-logo.png"; sourceTree = "<group>"; };
 		281569851D15C7370028C6CD /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		2815698B1D15E3030028C6CD /* String+Replace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Replace.swift"; sourceTree = "<group>"; };
 		2815698D1D15EB6B0028C6CD /* GroupOverviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupOverviewController.swift; sourceTree = "<group>"; };
@@ -144,7 +155,6 @@
 		287FAACD1D1B065B00359BFE /* GroupLiquidationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupLiquidationTableViewCell.swift; path = tableviewcells/GroupLiquidationTableViewCell.swift; sourceTree = "<group>"; };
 		288F6C111D16DB5600E2B875 /* GroupDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
 		288F6C131D16DC5200E2B875 /* PaymentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentTableViewCell.swift; path = tableviewcells/PaymentTableViewCell.swift; sourceTree = "<group>"; };
-		288F6C151D16DC8D00E2B875 /* wiebetaaltwat-footer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wiebetaaltwat-footer.png"; path = "images/wiebetaaltwat-footer.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +178,10 @@
 			isa = PBXGroup;
 			children = (
 				280833E01D157F6C0013358A /* icons */,
-				288F6C151D16DC8D00E2B875 /* wiebetaaltwat-footer.png */,
-				280833DC1D15746D0013358A /* wiebetaaltwat-logo.png */,
+				2814EEDD1D1EC4130069A25C /* profile-female-logo.png */,
+				2814EEDF1D1EC4190069A25C /* profile-male-logo.png */,
+				2814EEDB1D1EC25C0069A25C /* user-login-logo.png */,
+				2814EED91D1EC1E70069A25C /* user-register-logo.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -253,8 +265,9 @@
 			children = (
 				287C049F1D15634A00F42CF3 /* UIColor+HexCode.swift */,
 				287C04A01D15634A00F42CF3 /* UIImage+GrayScale.swift */,
-				2815698B1D15E3030028C6CD /* String+Replace.swift */,
 				2844938F1D1C0F290004E535 /* String+AlphabetColor.swift */,
+				2814EED31D1E8DDA0069A25C /* String+Email.swift */,
+				2815698B1D15E3030028C6CD /* String+Replace.swift */,
 			);
 			path = categories;
 			sourceTree = "<group>";
@@ -305,6 +318,7 @@
 				2805EAAB1D169B0600C830C9 /* TabBarController.swift */,
 				287472C61D1AE3220081B342 /* SettingsViewController.swift */,
 				2844938B1D1C06900004E535 /* UserViewController.swift */,
+				2814EED51D1EA9A90069A25C /* RegisterViewController.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -321,12 +335,13 @@
 		287C049E1D1562B200F42CF3 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				284493971D1C32770004E535 /* NamedTextField.swift */,
-				280833D71D156A470013358A /* LabeledTextField.swift */,
-				280833D51D1569EE0013358A /* LoginBoxView.swift */,
-				280833D31D1569AB0013358A /* LogoHeaderView.swift */,
-				287C04A51D15637200F42CF3 /* BoxView.swift */,
 				287C04A61D15637200F42CF3 /* View.swift */,
+				280833D71D156A470013358A /* LabeledTextField.swift */,
+				280833D31D1569AB0013358A /* LogoHeaderView.swift */,
+				284493971D1C32770004E535 /* NamedTextField.swift */,
+				287C04A51D15637200F42CF3 /* BoxView.swift */,
+				280833D51D1569EE0013358A /* LoginBoxView.swift */,
+				2814EED71D1EAA7F0069A25C /* RegisterBoxView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -391,15 +406,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				280833DD1D15746D0013358A /* wiebetaaltwat-logo.png in Resources */,
+				2814EEDC1D1EC25C0069A25C /* user-login-logo.png in Resources */,
+				2814EEE01D1EC4190069A25C /* profile-male-logo.png in Resources */,
 				284493961D1C2B9C0004E535 /* circled-up.png in Resources */,
 				284493921D1C26FF0004E535 /* euro-filled.png in Resources */,
 				280833E81D1580120013358A /* lock.png in Resources */,
 				287C04911D15512700F42CF3 /* LaunchScreen.storyboard in Resources */,
+				2814EEDA1D1EC1E70069A25C /* user-register-logo.png in Resources */,
 				287C048E1D15512700F42CF3 /* Assets.xcassets in Resources */,
+				2814EEDE1D1EC4130069A25C /* profile-female-logo.png in Resources */,
 				280833E71D1580120013358A /* account.png in Resources */,
 				284493941D1C2A6B0004E535 /* euro.png in Resources */,
-				288F6C161D16DC8D00E2B875 /* wiebetaaltwat-footer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,11 +432,13 @@
 				287C04A11D15634A00F42CF3 /* UIColor+HexCode.swift in Sources */,
 				287472C71D1AE3220081B342 /* SettingsViewController.swift in Sources */,
 				284838581D199A0C002CA1D3 /* GroupScraper.swift in Sources */,
+				2814EED41D1E8DDA0069A25C /* String+Email.swift in Sources */,
 				287C04A21D15634A00F42CF3 /* UIImage+GrayScale.swift in Sources */,
 				281569861D15C7370028C6CD /* Group.swift in Sources */,
 				287C04A71D15637200F42CF3 /* BoxView.swift in Sources */,
 				287472C51D1ADD270081B342 /* LiquidationScraper.swift in Sources */,
 				28044FAA1D1A9C510039D2F3 /* GroupSegmentedViewController.swift in Sources */,
+				2814EED61D1EA9A90069A25C /* RegisterViewController.swift in Sources */,
 				287C04891D15512700F42CF3 /* LoginViewController.swift in Sources */,
 				284493981D1C32770004E535 /* NamedTextField.swift in Sources */,
 				28044FAC1D1AC69C0039D2F3 /* GroupMembersViewController.swift in Sources */,
@@ -441,6 +460,7 @@
 				288F6C121D16DB5600E2B875 /* GroupDetailViewController.swift in Sources */,
 				285A793B1D17F27A00F3689D /* CreatePaymentViewController.swift in Sources */,
 				284493891D1C03390004E535 /* UIImageView+Letters.m in Sources */,
+				2814EED81D1EAA7F0069A25C /* RegisterBoxView.swift in Sources */,
 				28044FB21D1AD4460039D2F3 /* Liquidation.swift in Sources */,
 				2815698C1D15E3030028C6CD /* String+Replace.swift in Sources */,
 				2848385A1D199A69002CA1D3 /* PaymentScraper.swift in Sources */,

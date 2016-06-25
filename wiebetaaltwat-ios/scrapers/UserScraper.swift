@@ -40,6 +40,37 @@ class UserScraper: BaseScraper {
         }
     }
 
+    // MARK: - Register scraping
+    func register(email: String, listName: String, listDescription: String, completion: (Bool, String) -> ()) {
+        let parameters: [String: AnyObject] = [
+            "action": "register",
+            "email" : email,
+            "email2": email,
+            "list_name": listName,
+            "list_description": listDescription
+        ]
+
+        client.request(.POST, url: base_url + "/register/", parameters: parameters) { html in
+            log.debug(html)
+
+            if let _ = html {
+                if(html?.lowercaseString.rangeOfString("er is al een gebruiker met") != nil) {
+                    completion(false, "E-mailadres al gebruikt, wachtwoord vergeten?")
+
+                    log.info("registering failed with email: \(email) - already used")
+                } else if(html?.lowercaseString.rangeOfString("We hebben een activatie-link\ngestuurd naar:") != nil) {
+                    completion(true, "Succesvol geregistreerd, bevestig uw ontvangen email")
+
+                    log.verbose("registered successfully with email: \(email)")
+                } else {
+                    completion(false, "Registreren mislukt, onbekend probleem")
+
+                    log.warning("registering failed with email: \(email) - unkown issue")
+                }
+            }
+        }
+    }
+
     // MARK: - Group scraping
     func getGroups(completion: [Group]? -> ()) {
         let parameters: [String: AnyObject] = [:]

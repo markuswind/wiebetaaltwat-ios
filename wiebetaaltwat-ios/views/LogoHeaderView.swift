@@ -11,6 +11,8 @@ import UIKit
 
 class LogoHeaderView: View {
 
+    var imageView: UIImageView!
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -21,12 +23,10 @@ class LogoHeaderView: View {
         // create logo
         let aspectwidth = frame.height * 0.75
 
-        let logoImageView = UIImageView(frame: CGRect(x: frame.midX - (aspectwidth / 2), y: frame.midY - (aspectwidth / 2), width: aspectwidth, height: aspectwidth))
-        logoImageView.image = UIImage(named: "wiebetaaltwat-logo.png")
-        logoImageView.contentMode = .ScaleAspectFit
+        imageView = UIImageView(frame: CGRect(x: frame.midX - (aspectwidth / 2), y: frame.midY - (aspectwidth / 2), width: aspectwidth, height: aspectwidth))
 
         // done
-        addSubview(logoImageView)
+        addSubview(imageView)
     }
     
     required init?(coder aDecoder: NSCoder) {

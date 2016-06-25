@@ -17,6 +17,11 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
     var boxView: BoxView!
     var loginBoxView: LoginBoxView!
 
+    var statusLabel: UILabel!
+    var statusIndicatorView: UIActivityIndicatorView!
+
+    var registerButton: UIButton!
+
     init(user: User?) {
         self.user = user
         super.init(nibName: nil, bundle: nil)
@@ -37,8 +42,11 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
 
         addLogoHeaderView()
         addLoginBoxView()
-        addFooter()
+        addStatusLabel()
+//        addFooter()
+        addRegisterButton()
 
+        // retrieved user in delegate?
         if let _ = user {
             login()
         }
@@ -47,6 +55,8 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
     private func addLogoHeaderView() {
         logoHeaderView = LogoHeaderView(frame: CGRect(x: 0, y: -1, width: SETTINGS.screenWidth, height: SETTINGS.screenHeight / 3 - 49))
         logoHeaderView.backgroundColor = UIColor(colorCode: "FFFFFF")
+        logoHeaderView.imageView.image = UIImage(named: "user-login-logo.png")
+        logoHeaderView.imageView.contentMode = .ScaleAspectFit
 
         view.addSubview(logoHeaderView)
     }
@@ -63,6 +73,35 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
         view.addSubview(boxView)
     }
 
+    private func addStatusLabel() {
+        statusLabel = UILabel(frame: CGRect(x: 0, y: boxView.frame.maxY + 10, width: view.frame.width, height: 20))
+        statusLabel.textAlignment = .Center
+        statusLabel.font = UIFont(name: ".SFUIText-Light", size: 12)!
+        statusLabel.textColor = UIColor(colorCode: "222222")
+
+        statusIndicatorView = UIActivityIndicatorView(frame: CGRect(x: view.frame.midX - 15, y: statusLabel.frame.maxY + 4, width: 30, height: 30))
+        statusIndicatorView.color = UIColor(colorCode: "222222")
+
+        view.addSubview(statusLabel)
+        view.addSubview(statusIndicatorView)
+    }
+
+    private func addRegisterButton() {
+        let registerButtonHeight = view.frame.maxY - statusIndicatorView.frame.maxY - 8
+        registerButton = UIButton(frame: CGRect(x: 0, y: view.frame.maxY - registerButtonHeight, width: view.frame.width, height: registerButtonHeight / 2))
+
+        registerButton.backgroundColor = UIColor(colorCode: "0098db")
+        registerButton.titleLabel?.sizeToFit()
+
+        registerButton.setTitle("Registreer nieuw account", forState: .Normal)
+        registerButton.titleLabel!.font = UIFont(name: ".SFUIText-Light", size: 13)
+
+        registerButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        registerButton.addTarget(self, action: #selector(self.registerButtonClicked(_:)), forControlEvents: .TouchUpInside)
+
+        view.addSubview(registerButton)
+    }
+
     private func addFooter() {
         let footerMargin: CGFloat = 20
         let footerHeight = SETTINGS.screenHeight - (boxView.frame.maxY) - footerMargin
@@ -73,13 +112,13 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
         footerImageView.alpha = 0.6
         footerImageView.contentMode = .ScaleAspectFit
 
-        view.addSubview(footerImageView)
+        view.insertSubview(footerImageView, belowSubview: statusLabel)
     }
 
     func textFieldDidBeginEditing(textField: UITextField) {
         UIView.animateWithDuration(0.5) {
             self.logoHeaderView.alpha = 0.0
-            self.boxView.center = CGPoint(x: self.boxView.frame.minX + self.boxView.frame.width / 2, y: self.boxView.frame.height)
+            self.boxView.center = CGPoint(x: self.boxView.frame.minX + self.boxView.frame.width / 2, y: 20 + self.boxView.frame.height / 2)
         }
     }
 
@@ -89,7 +128,10 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
         } else {
             loginBoxView.endEditing(true)
 
-            UIView.animateWithDuration(0.5) {
+            statusLabel.text = ""
+            statusLabel.textColor = UIColor(colorCode: "222222")
+
+            UIView.animateWithDuration(1.0) {
                 self.logoHeaderView.alpha = 1.0
                 self.boxView.center = CGPoint(x: self.boxView.frame.minX + self.boxView.frame.width / 2, y: self.logoHeaderView.frame.maxY + 40 + self.boxView.frame.height / 2)
             }
@@ -99,24 +141,39 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
     }
 
     func loginButtonClicked(sender: UIButton!) {
-        // TODO: - check if valid email and password values
+        textFieldShouldReturn(loginBoxView.passwordTextField.textField)
 
         let email = loginBoxView.emailTextField.textField.text
         let password = loginBoxView.passwordTextField.textField.text
-        self.user = User(email: email!, password: password!)
 
-        login()
+        if !email!.isValidEmail() {
+            statusLabel.text = "Uw emailadres is ongeldig.."
+            statusLabel.textColor = UIColor.redColor()
+        } else if password == "" {
+            statusLabel.text = "Vul uw wachtwoord in.."
+            statusLabel.textColor = UIColor.orangeColor()
+        } else {
+            self.user = User(email: email!, password: password!)
+            self.login()
+        }
     }
 
     func login() {
         loginBoxView.loginButton?.enabled = false
 
+        statusLabel.text = "Aan het inloggen..."
+        statusIndicatorView.startAnimating()
+
         user!.login { success in
             if success {
+                self.statusIndicatorView.stopAnimating()
+
                 self.user!.save()
                 self.loginSucceeded()
             } else {
-                // TODO: - show error message
+                self.statusLabel.text = "Email en/of wachtwoord is incorrect"
+                self.statusLabel.textColor = UIColor.redColor()
+                self.statusIndicatorView.stopAnimating()
 
                 self.loginBoxView.loginButton?.enabled = true
             }
@@ -141,9 +198,12 @@ class LoginViewController: UIViewController, LoginBoxViewDelegate, UITextFieldDe
         presentViewController(tabBarController, animated: true, completion: nil)
     }
 
+    func registerButtonClicked(sender: UIButton!) {
+        navigationController?.pushViewController(RegisterViewController(), animated: true)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
 }
-

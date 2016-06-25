@@ -21,7 +21,7 @@ class LabeledTextInput: View {
 
     var errorText: String = "" {
         didSet {
-            // TODO::
+            // TODO - V1.1: show error info icon with error text
         }
     }
 
@@ -55,6 +55,22 @@ class LabeledTextInput: View {
 
         addSubview(iconImageView)
         addSubview(textField)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+}
+
+class EmailLabeledTextInput: LabeledTextInput {
+
+    override init(icon: String, placeholder: String, frame: CGRect) {
+        super.init(icon: icon, placeholder: placeholder, frame: frame)
+
+        self.textField.keyboardType = .EmailAddress
+        self.textField.autocorrectionType = .No
+        self.textField.autocapitalizationType = .None
     }
     
     required init?(coder aDecoder: NSCoder) {
