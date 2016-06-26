@@ -10,7 +10,7 @@ import UIKit
 
 class GroupTableViewCell: UITableViewCell {
 
-    let frameHeight: CGFloat = 150
+    let frameHeight: CGFloat = 140
     let padding: CGFloat = 8
     let group: Group!
 
@@ -29,15 +29,15 @@ class GroupTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         frame = CGRect(x: 0, y: 0, width: SETTINGS.screenWidth, height: frameHeight)
-        backgroundColor = UIColor(colorCode: "F4F4F4")
-        accessoryType = .DisclosureIndicator
+        backgroundColor = UIColor.clearColor()
 
-        view = UIView(frame: CGRect(x: padding, y: padding, width: frame.width - padding * 2, height: frame.height - padding * 2))
+        view = UIView(frame: CGRect(x: padding * 2, y: padding, width: frame.width - padding * 4, height: frame.height - padding))
         view.backgroundColor = UIColor.whiteColor()
         addSubview(view)
 
         createInfoLabels()
-//        createLowestBalanceLabels()
+        createLowestBalanceLabels()
+        createHighestBalanceLabels()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -48,11 +48,11 @@ class GroupTableViewCell: UITableViewCell {
         groupImage = UIImageView(frame: CGRect(x: 8, y: 8, width: 50, height: 50))
         groupImage.setImageWithString(group.name, color: group.name.alphaBetColor(), circular: true)
 
-        groupNameLabel = UILabel(frame: CGRect(x: groupImage.frame.maxX + 8, y: 8, width: frame.width / 2, height: 25))
+        groupNameLabel = UILabel(frame: CGRect(x: groupImage.frame.maxX + 8, y: 8, width: view.frame.width - 74, height: 25))
         groupNameLabel.font = UIFont(name: "HelveticaNeue-Light", size: 17.5)
         groupNameLabel.text = group.name
 
-        ownBalanceLabel = UILabel(frame: CGRect(x: groupNameLabel.frame.minX, y: groupNameLabel.frame.maxY, width: view.frame.width / 2, height: 25))
+        ownBalanceLabel = UILabel(frame: CGRect(x: groupNameLabel.frame.minX, y: groupNameLabel.frame.maxY, width: groupNameLabel.frame.width, height: 25))
         ownBalanceLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 17.5)
         ownBalanceLabel.text = "€" + group.ownBalance
 
@@ -62,10 +62,40 @@ class GroupTableViewCell: UITableViewCell {
     }
 
     private func createLowestBalanceLabels() {
-        lowestBalanceLabel = UILabel(frame: CGRect(x: groupImage.frame.maxX + 8, y: groupNameLabel.frame.maxY + 4, width: view.frame.width * 0.3, height: 15))
-        lowestBalanceLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 10.0)
-        lowestBalanceLabel.text = "Laagste stand"
+        let lowestBalanceInfoLabel = UILabel(frame: CGRect(x: ownBalanceLabel.frame.minX, y: groupImage.frame.maxY + 8, width: groupNameLabel.frame.width / 2, height: 15))
+        lowestBalanceInfoLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 14.0)
+        lowestBalanceInfoLabel.text = "Laagste stand"
 
+        lowestBalanceUserLabel = UILabel(frame: CGRect(x: lowestBalanceInfoLabel.frame.minX, y: lowestBalanceInfoLabel.frame.maxY + 4, width: lowestBalanceInfoLabel.frame.width, height: lowestBalanceInfoLabel.frame.height))
+        lowestBalanceUserLabel.font = UIFont(name: "HelveticaNeue-Light", size: 14.0)
+        lowestBalanceUserLabel.text = group.lowestBalanceUser
+
+        lowestBalanceLabel = UILabel(frame: CGRect(x: lowestBalanceInfoLabel.frame.minX, y: lowestBalanceUserLabel.frame.maxY + 4, width: lowestBalanceInfoLabel.frame.width, height: lowestBalanceInfoLabel.frame.height))
+        lowestBalanceLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 14.0)
+        lowestBalanceLabel.text = "€" + group.lowestBalance
+        lowestBalanceLabel.textColor = UIColor(colorCode: "F64747")
+
+        view.addSubview(lowestBalanceInfoLabel)
+        view.addSubview(lowestBalanceUserLabel)
         view.addSubview(lowestBalanceLabel)
+    }
+
+    private func createHighestBalanceLabels() {
+        let highestBalanceInfoLabel = UILabel(frame: CGRect(x: lowestBalanceLabel.frame.maxX, y: groupImage.frame.maxY + 8, width: groupNameLabel.frame.width / 2, height: 15))
+        highestBalanceInfoLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 14.0)
+        highestBalanceInfoLabel.text = "Hoogste stand"
+
+        highestBalanceUserLabel = UILabel(frame: CGRect(x: highestBalanceInfoLabel.frame.minX, y: highestBalanceInfoLabel.frame.maxY + 4, width: highestBalanceInfoLabel.frame.width, height: highestBalanceInfoLabel.frame.height))
+        highestBalanceUserLabel.font = UIFont(name: "HelveticaNeue-Light", size: 14.0)
+        highestBalanceUserLabel.text = group.highestBalanceUser
+
+        highestBalanceLabel = UILabel(frame: CGRect(x: highestBalanceInfoLabel.frame.minX, y: highestBalanceUserLabel.frame.maxY + 4, width: highestBalanceInfoLabel.frame.width, height: highestBalanceInfoLabel.frame.height))
+        highestBalanceLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 14.0)
+        highestBalanceLabel.text = "€" + group.highestBalance
+        highestBalanceLabel.textColor = UIColor(colorCode: "3FC380")
+
+        view.addSubview(highestBalanceInfoLabel)
+        view.addSubview(highestBalanceUserLabel)
+        view.addSubview(highestBalanceLabel)
     }
 }

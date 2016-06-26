@@ -16,7 +16,7 @@ class GroupOverViewController: UITableViewController {
 
     override func viewDidLoad() {
         // setup styling
-        tableView.backgroundColor = UIColor(colorCode: "F2F2F2")
+        tableView.backgroundColor = UIColor(colorCode: "F4F4F4")
         tableView.separatorColor = UIColor.clearColor()
 
         navigationItem.title = "List Overview"
@@ -24,7 +24,7 @@ class GroupOverViewController: UITableViewController {
 
         // setup tableview
         tableView.registerClass(GroupTableViewCell.self, forCellReuseIdentifier: "GroupTableViewCell")
-        tableView.rowHeight = 150
+        tableView.rowHeight = 140
 
         // load groups
         user.getGroups({
