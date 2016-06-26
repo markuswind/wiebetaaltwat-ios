@@ -10,20 +10,22 @@ import UIKit
 
 class GroupMemberTableViewCell: UITableViewCell {
 
-    let frameHeight: CGFloat = 40
+    let frameHeight: CGFloat = 50
+    let index: String!
     let member: BalanceUser!
 
     var avaterImageView: UIImageView!
     var nameLabel: UILabel!
     var balanceLabel: UILabel!
 
-    init(member: BalanceUser, style: UITableViewCellStyle, reuseIdentifier: String?) {
+    init(index: Int, member: BalanceUser, style: UITableViewCellStyle, reuseIdentifier: String?) {
+        self.index = String(index)
         self.member = member
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         frame = CGRect(x: 0, y: 0, width: SETTINGS.screenWidth, height: frameHeight)
 
-        createAvaterImage()
+//        createAvaterImage()
         createLabels()
     }
     
@@ -32,21 +34,36 @@ class GroupMemberTableViewCell: UITableViewCell {
     }
 
     private func createAvaterImage() {
-        avaterImageView = UIImageView(frame: CGRect(x: 5, y: 5, width: 30, height: 30))
-        avaterImageView.setImageWithString(member.name, color: member.name.alphaBetColor(), circular: true)
+        avaterImageView = UIImageView(frame: CGRect(x: 8, y: 8, width: 25, height: 25))
+        avaterImageView.setImageWithString(index, color: nil, circular: true)
 
         addSubview(avaterImageView)
     }
 
     private func createLabels() {
-        nameLabel = UILabel(frame: CGRect(x: avaterImageView.frame.maxX + 8, y: 5, width: frame.width - 16 - avaterImageView.frame.maxX, height: 15))
+        // create balance icon
+        let balanceIcon = UIImageView(frame: CGRect(x: 8, y: 8, width: 30, height: 30))
+
+        if (member.balance.rangeOfString("-") != nil) {
+            balanceIcon.image = UIImage(named: "minus.png")
+        } else {
+            balanceIcon.image = UIImage(named: "plus.png")
+        }
+
+        // create namelabel
+        nameLabel = UILabel(frame: CGRect(x: balanceIcon.frame.maxX + 4, y: 4, width: frame.width - 16, height: 19))
+        nameLabel.font = UIFont(name: "HelvetciaNeue-Light", size: 15)
         nameLabel.text = member.name
 
-        balanceLabel = UILabel(frame: CGRect(x: avaterImageView.frame.maxX + 8, y: nameLabel.frame.maxY, width: frame.width - 16 - avaterImageView.frame.maxX, height: 15))
-        balanceLabel.text = member.balance
+        // create balance label
+        let balancelabel = UILabel(frame: CGRect(x: balanceIcon.frame.maxX + 4, y: nameLabel.frame.maxY + 4, width: frame.width - 40, height: 19))
+        balancelabel.font = UIFont(name: "HelveticaNeue", size: 12.0)
+        balancelabel.text = "€ \(member.balance)"
 
+        // done
         addSubview(nameLabel)
-        addSubview(balanceLabel)
+        addSubview(balanceIcon)
+        addSubview(balancelabel)
     }
 
 }

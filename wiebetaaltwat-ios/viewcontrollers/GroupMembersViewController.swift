@@ -29,7 +29,7 @@ class GroupMemberViewController: UITableViewController {
 
         // setup tableview
         tableView.registerClass(GroupMemberTableViewCell.self, forCellReuseIdentifier: "groupMemberTableViewCell")
-        tableView.rowHeight = 40
+        tableView.rowHeight = 50
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,7 +42,7 @@ class GroupMemberViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let member = group.balanceUsers[indexPath.row]
-        let cell = GroupMemberTableViewCell(member: member, style: .Default, reuseIdentifier: "groupMemberTableViewCell")
+        let cell = GroupMemberTableViewCell(index: indexPath.row, member: member, style: .Default, reuseIdentifier: "groupMemberTableViewCell")
 
         return cell
     }

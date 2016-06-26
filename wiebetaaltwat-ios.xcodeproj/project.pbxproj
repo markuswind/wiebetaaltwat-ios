@@ -58,6 +58,8 @@
 		285A793B1D17F27A00F3689D /* CreatePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A793A1D17F27A00F3689D /* CreatePaymentViewController.swift */; };
 		285A793D1D17F55800F3689D /* CalculatorKeyboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285A793C1D17F55800F3689D /* CalculatorKeyboard.framework */; };
 		285A793E1D17F55800F3689D /* CalculatorKeyboard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 285A793C1D17F55800F3689D /* CalculatorKeyboard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		285F38B71D20134400E18040 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 285F38B51D20134400E18040 /* plus.png */; };
+		285F38B81D20134400E18040 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 285F38B61D20134400E18040 /* minus.png */; };
 		287472C51D1ADD270081B342 /* LiquidationScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287472C41D1ADD270081B342 /* LiquidationScraper.swift */; };
 		287472C71D1AE3220081B342 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287472C61D1AE3220081B342 /* SettingsViewController.swift */; };
 		287C04891D15512700F42CF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C04881D15512700F42CF3 /* LoginViewController.swift */; };
@@ -140,6 +142,8 @@
 		284838591D199A69002CA1D3 /* PaymentScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentScraper.swift; sourceTree = "<group>"; };
 		285A793A1D17F27A00F3689D /* CreatePaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePaymentViewController.swift; sourceTree = "<group>"; };
 		285A793C1D17F55800F3689D /* CalculatorKeyboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalculatorKeyboard.framework; path = Carthage/Build/iOS/CalculatorKeyboard.framework; sourceTree = "<group>"; };
+		285F38B51D20134400E18040 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		285F38B61D20134400E18040 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
 		287472C41D1ADD270081B342 /* LiquidationScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidationScraper.swift; sourceTree = "<group>"; };
 		287472C61D1AE3220081B342 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		287C04831D15512700F42CF3 /* wiebetaaltwat-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wiebetaaltwat-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +198,8 @@
 				284493931D1C2A6B0004E535 /* euro.png */,
 				284493911D1C26FF0004E535 /* euro-filled.png */,
 				280833E61D1580120013358A /* lock.png */,
+				285F38B61D20134400E18040 /* minus.png */,
+				285F38B51D20134400E18040 /* plus.png */,
 			);
 			name = icons;
 			sourceTree = "<group>";
@@ -408,6 +414,7 @@
 			files = (
 				2814EEDC1D1EC25C0069A25C /* user-login-logo.png in Resources */,
 				2814EEE01D1EC4190069A25C /* profile-male-logo.png in Resources */,
+				285F38B81D20134400E18040 /* minus.png in Resources */,
 				284493961D1C2B9C0004E535 /* circled-up.png in Resources */,
 				284493921D1C26FF0004E535 /* euro-filled.png in Resources */,
 				280833E81D1580120013358A /* lock.png in Resources */,
@@ -417,6 +424,7 @@
 				2814EEDE1D1EC4130069A25C /* profile-female-logo.png in Resources */,
 				280833E71D1580120013358A /* account.png in Resources */,
 				284493941D1C2A6B0004E535 /* euro.png in Resources */,
+				285F38B71D20134400E18040 /* plus.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
