@@ -29,11 +29,6 @@ class GroupTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         frame = CGRect(x: 0, y: 0, width: SETTINGS.screenWidth, height: frameHeight)
-        backgroundColor = UIColor.clearColor()
-
-        view = UIView(frame: CGRect(x: padding * 2, y: padding, width: frame.width - padding * 4, height: frame.height - padding))
-        view.backgroundColor = UIColor.whiteColor()
-        addSubview(view)
 
         createInfoLabels()
         createLowestBalanceLabels()
@@ -48,17 +43,17 @@ class GroupTableViewCell: UITableViewCell {
         groupImage = UIImageView(frame: CGRect(x: 8, y: 8, width: 50, height: 50))
         groupImage.setImageWithString(group.name, color: group.name.alphaBetColor(), circular: true)
 
-        groupNameLabel = UILabel(frame: CGRect(x: groupImage.frame.maxX + 8, y: 8, width: view.frame.width - 74, height: 25))
+        groupNameLabel = UILabel(frame: CGRect(x: groupImage.frame.maxX + 8, y: 8, width: frame.width - 74, height: 25))
         groupNameLabel.font = UIFont(name: "HelveticaNeue-Light", size: 17.5)
         groupNameLabel.text = group.name
 
         ownBalanceLabel = UILabel(frame: CGRect(x: groupNameLabel.frame.minX, y: groupNameLabel.frame.maxY, width: groupNameLabel.frame.width, height: 25))
-        ownBalanceLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 17.5)
+        ownBalanceLabel.font = UIFont(name: "HelveticaNeue-Lighter", size: 17.5)
         ownBalanceLabel.text = "€" + group.ownBalance
 
-        view.addSubview(groupImage)
-        view.addSubview(groupNameLabel)
-        view.addSubview(ownBalanceLabel)
+        addSubview(groupImage)
+        addSubview(groupNameLabel)
+        addSubview(ownBalanceLabel)
     }
 
     private func createLowestBalanceLabels() {
@@ -75,9 +70,9 @@ class GroupTableViewCell: UITableViewCell {
         lowestBalanceLabel.text = "€" + group.lowestBalance
         lowestBalanceLabel.textColor = UIColor(colorCode: "F64747")
 
-        view.addSubview(lowestBalanceInfoLabel)
-        view.addSubview(lowestBalanceUserLabel)
-        view.addSubview(lowestBalanceLabel)
+        addSubview(lowestBalanceInfoLabel)
+        addSubview(lowestBalanceUserLabel)
+        addSubview(lowestBalanceLabel)
     }
 
     private func createHighestBalanceLabels() {
@@ -94,8 +89,8 @@ class GroupTableViewCell: UITableViewCell {
         highestBalanceLabel.text = "€" + group.highestBalance
         highestBalanceLabel.textColor = UIColor(colorCode: "3FC380")
 
-        view.addSubview(highestBalanceInfoLabel)
-        view.addSubview(highestBalanceUserLabel)
-        view.addSubview(highestBalanceLabel)
+        addSubview(highestBalanceInfoLabel)
+        addSubview(highestBalanceUserLabel)
+        addSubview(highestBalanceLabel)
     }
 }

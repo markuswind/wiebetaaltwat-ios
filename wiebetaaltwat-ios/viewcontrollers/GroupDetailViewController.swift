@@ -11,6 +11,7 @@ import UIKit
 class GroupDetailViewController: UITableViewController {
 
     let group: Group!
+    var tableViewCells: [UITableViewCell] = []
 
     init(group: Group) {
         self.group = group
@@ -27,7 +28,14 @@ class GroupDetailViewController: UITableViewController {
 
         // setup tableview
         tableView.registerClass(GroupTableViewCell.self, forCellReuseIdentifier: "PaymentTableViewCell")
-        tableView.rowHeight = 100
+    }
+
+    override func viewWillDisappear(animated : Bool) {
+        super.viewWillDisappear(animated)
+
+        if (self.isMovingFromParentViewController()) {
+            tableViewCells.removeAll()
+        }
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,9 +46,21 @@ class GroupDetailViewController: UITableViewController {
         return 0
     }
 
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if tableViewCells.count > indexPath.row {
+            if let paymentTableViewCell = tableViewCells[indexPath.row] as? PaymentTableViewCell {
+                return paymentTableViewCell.frameHeight
+            }
+        }
+
+        return 110
+    }
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let payment = group.payments[indexPath.item]
         let paymentTableViewCell = PaymentTableViewCell(payment: payment, style: .Default, reuseIdentifier: "PaymentTableViewCell")
+
+        tableViewCells.append(paymentTableViewCell)
 
         return paymentTableViewCell
     }
